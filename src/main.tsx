@@ -1,0 +1,16 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { HashRouter } from "react-router-dom";
+import './index.css';
+import { AppRouter } from './routes/AppRouter';
+import { ProgressProvider } from './common/contexts/ProgressContext';
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <HashRouter>
+      <ProgressProvider>
+        <AppRouter />
+      </ProgressProvider>
+    </HashRouter>
+  </StrictMode>,
+);
