@@ -20,7 +20,7 @@ export const TensiometerSim = () => {
   const ropePosition = 50 + (tensionKpa > 50 ? Math.min((tensionKpa - 50) * 0.6, 30) : -(50 - tensionKpa) * 0.3);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-stone-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-stone-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-stone-200 dark:border-stone-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-stone-200/10 rounded-full blur-3xl" />
@@ -33,8 +33,8 @@ export const TensiometerSim = () => {
               <Gauge className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">ميزان شد التربة — Tensiometer</h3>
-              <p className="text-xs text-slate-500">لعبة شد الحبل بين التربة والجذر</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">ميزان شد التربة — Tensiometer</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">لعبة شد الحبل بين التربة والجذر</p>
             </div>
           </div>
           <motion.div
@@ -55,7 +55,7 @@ export const TensiometerSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 200 280" className="w-full h-full">
               <defs>
                 <radialGradient id="soilBg" cx="50%" cy="70%" r="60%">
@@ -184,7 +184,7 @@ export const TensiometerSim = () => {
                   -{tensionKpa}
                 </span>
               </div>
-              <div className="text-xs text-slate-500">
+              <div className="text-xs text-slate-500 dark:text-slate-400">
                 <span className="font-bold">وحدة القياس:</span> kPa (كيلو باسكال) أو cBar
               </div>
             </div>

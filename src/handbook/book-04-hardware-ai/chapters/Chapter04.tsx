@@ -7,19 +7,19 @@ export default function Chapter04() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 4 من 4</span>
+        <span>الفصل 4 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         💧 الري الآلي المحوري (Center Pivot)
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> كيف تروي 100 هكتار من القمح في الصحراء حيث لا ماء سطحي ولا عمال؟ 
           الحل: ذراع فولاذية بطول 500 متر تدور حول نقطة ثابتة كعقرب الساعة.
         </div>
@@ -64,14 +64,14 @@ export default function Chapter04() {
           كلما ابتعدنا عن المركز، كلما زادت المساحة المطلوب ريّها في نفس الوقت، 
           وبالتالي نحتاج كمية ماء أكبر — أي فتحة رشاش أوسع.
         </p>
-        <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 my-6">
+        <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-6 my-6">
           <p className="font-mono text-center">
             مساحة الحلقة = π × (R² − r²) <br />
             كلما ابتعدت عن المركز، زادت مساحة الحلقة وارتفعت الحاجة للماء
           </p>
         </div>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>مثال هندسي:</strong> رشاش على بعد 50 متراً من المركز يحتاج فتحة 4 مم، 
           بينما رشاش على بعد 400 متر يحتاج فتحة 20 مم — أي 5 أضعاف كمية الماء. 
           إذا أهملت هذا التدرج، ستحصل على ري زائد في المركز وري ناقص في الأطراف.
@@ -132,34 +132,34 @@ export default function Chapter04() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <RotateCw className="text-blue-400" />
             المحاكي: نظام الري المحوري
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             اضبط تدرج فتحات الرشاشات وشاهد كيف تتغير انتظامية توزيع الماء عبر الحقل:
           </p>
           <CenterPivotSim />
         </div>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> الري المحوري هو مثال رائع على كيف يحل التصميم الهندسي مشكلة 
           توزيع الماء على مساحات شاسعة. مفتاح النجاح هو <strong>تدرج الرشاشات</strong> 
           (من الصغير في المركز إلى الكبير في الأطراف) و<strong>معامل الانتظام</strong>. 
           نظام مصمم جيداً يعني محصولاً متجانساً، ماءً موفراً، وأرباحاً أعلى.
         </div>
-      </div>
+        </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-04-hardware-ai/chapter03">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: ميكانيكا التربة وانضغاطها
           </Button>
         </Link>
-        <Link to="/book-04-hardware-ai">
-          <Button className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700">
-            التالي: مقدمة الكتاب <ArrowLeft size={18} />
+        <Link to="/book-04-hardware-ai/chapter05">
+          <Button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700">
+            التالي: المزارع العمودية <ArrowLeft size={18} />
           </Button>
         </Link>
       </div>

@@ -7,21 +7,21 @@ export default function Chapter01() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
         {/* Navigation */}
-        <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-            <Link to="/book-02-science-toolbox" className="hover:text-blue-600 flex items-center gap-1">
+        <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+            <Link to="/book-02-science-toolbox" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 1 من 15</span>
         </div>
 
         {/* Hero */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
             المكعبات الصغيرة: العالم عبارة عن "ليغو"
         </h1>
 
         <div className="prose-custom">
             
-            <p className="lead text-xl text-slate-700 font-medium">
+            <p className="lead text-xl text-slate-700 dark:text-slate-300 font-medium">
                 عندما تمسك حفنة من التراب، أو قطرة ماء، أو حبة سماد، فأنت تمسك بملايين الملايين من "المكعبات" الصغيرة جداً.
             </p>
             
@@ -30,12 +30,12 @@ export default function Chapter01() {
                 وعندما نركب مكعبين أو أكثر مع بعضهم، نحصل على <strong>"جزيء" (Molecule)</strong>.
             </p>
 
-            <div className="bg-purple-50 p-6 rounded-2xl border-r-4 border-purple-500 my-8">
-                <h3 className="text-purple-800 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
+            <div className="bg-purple-50 dark:bg-purple-900/30 p-6 rounded-2xl border-r-4 border-purple-500 my-8">
+                <h3 className="text-purple-800 dark:text-purple-200 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
                     <Box size={20} />
                     لماذا يهمنا هذا كفلاحين؟
                 </h3>
-                <p className="text-sm text-slate-700 mb-0">
+                <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
                     لأن السماد ليس "بودرة سحرية". هو تركيب محدد.
                     <br/>
                     - اليوريا هي ترتيب معين لمكعبات (نيتروجين + كربون + هيدروجين).
@@ -60,13 +60,13 @@ export default function Chapter01() {
                 جرب إضافتهم وشاهد كيف "يلتصقون" ببعضهم ليصبحوا شيباً واحداً جديداً له خصائص مختلفة تماماً عن الغازات التي كونتّه.
             </p>
 
-            <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 shadow-sm mt-8">
-                <div className="bg-white p-2 rounded-full shadow-sm text-blue-600">
+            <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 dark:bg-slate-800 shadow-sm mt-8">
+                <div className="bg-white dark:bg-slate-900 p-2 rounded-full shadow-sm text-blue-600 dark:text-blue-400">
                     <Atom size={24} />
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-900 mt-0">قاعدة بسيطة</h4>
-                    <p className="text-sm text-slate-600 mb-0">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 mt-0">قاعدة بسيطة</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-0">
                         لا تخف من الأسماء الكيميائية (نترات، فوسفات، سلفات).
                         هي مجرد أسماء "لأشكال الليغو".
                         <strong>نترات:</strong> تعني مكعب نيتروجين مرتبط بـ 3 مكعبات أكسجين. فقط!
@@ -76,7 +76,7 @@ export default function Chapter01() {
         </div>
 
         {/* Navigation Bottom */}
-        <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+        <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
             <Link to="/book-02-science-toolbox">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> العودة للمقدمة

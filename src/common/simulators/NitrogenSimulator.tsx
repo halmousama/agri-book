@@ -113,7 +113,7 @@ export const NitrogenSimulator = () => {
   const badge = getStatusBadge();
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-green-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-green-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-green-200 dark:border-green-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-emerald-200/10 rounded-full blur-3xl" />
@@ -125,10 +125,10 @@ export const NitrogenSimulator = () => {
               <Sprout className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 مختبر النيتروجين — دورة N في التربة
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 كيف يؤثر النيتروجين و pH على صحة النبات؟
               </p>
             </div>
@@ -145,7 +145,7 @@ export const NitrogenSimulator = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري المطور ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 260 320" className="w-full h-full">
               <defs>
                 <linearGradient id="nBg" x1="0" y1="0" x2="0" y2="1">

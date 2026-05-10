@@ -6,19 +6,19 @@ import { EtcWeatherSim } from "../../../common/simulators/EtcWeatherSim";
 export default function Chapter04() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 4 من 12</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         💧 التبخر-نتح (Evapotranspiration — ETc): كم ملليمتراً تحتاج حقلاً؟
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> أنت تروي 100 هكتار من الزيتون. الفلاح المجاور يروي غداً وبعد غد. أنت تروي كل 5 أيام. من منكما على صواب؟ الجواب: لا أحد يعرف حتى تحسب ETc.
         </div>
 
@@ -38,17 +38,17 @@ export default function Chapter04() {
           <li><strong>نوع المحصول ومرحلة النمو:</strong> الطماطم في مرحلة الإثمار تشرب ضعف ما تشربه في مرحلة البادرة.</li>
         </ol>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>تطبيق عملي:</strong> في تونس، يوليو وأغسطس، ETc للطماطم تصل إلى 7-8 mm/يوم. إذا كان لديك هكتار (10,000 m²)، فهذا يعني 70-80 متر مكعب ماء يومياً! 70,000 لتر فقط لتعويض النتح والتبخر.
         </div>
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Gauge className="text-sky-500" />
             المحاكي: محطة الأرصاد الذكية
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             حرك مؤشرات الحرارة والرياح والشمس لترى كيف يحسب النظام الاحتياج المائي ويفتح المحبس تلقائياً:
           </p>
           <EtcWeatherSim />
@@ -65,12 +65,12 @@ export default function Chapter04() {
           <li>عندما يصل المخزون إلى حد معين (50% من السعة الحقلية)، يفتح المحبس تلقائياً.</li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> لا تروِ بالتقويم (كل 3 أيام). ارِ بالمناخ (حسب ETc). الفرق بينهما قد يكون 40% من فاتورة الماء — إما توفيراً أو هدراً.
         </div>
       </div>
 
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-03-systems-engineering/chapter03">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: C3 vs C4

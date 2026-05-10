@@ -15,11 +15,7 @@ export const FlowPipe = () => {
   const isSlow = width > 80;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-cyan-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-cyan-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-sky-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-cyan-200 dark:border-cyan-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -27,8 +23,8 @@ export const FlowPipe = () => {
               <Pipette className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">مختبر الجريان (الأنابيب)</h3>
-              <p className="text-xs text-slate-500">علاقة قطر الأنبوب بسرعة التدفق وحجم الجريان</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">مختبر الجريان (الأنابيب)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">علاقة قطر الأنبوب بسرعة التدفق وحجم الجريان</p>
             </div>
           </div>
           <motion.div
@@ -47,8 +43,8 @@ export const FlowPipe = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 bg-slate-50 shadow-inner">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-inner">
               <svg viewBox="0 0 400 200" className="w-full h-full">
                 <defs>
                   <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">

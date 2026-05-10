@@ -7,19 +7,19 @@ export default function Chapter02() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 2 من 4</span>
+        <span>الفصل 2 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🌱 الزراعة التجديدية وشبكة الفطريات (Mycorrhizae)
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> لماذا تحتاج حقولنا إلى أسمدة فوسفاتية كل عام بينما الغابات
           لا تحتاج أي سماد؟ الجواب تحت أقدامنا — في شبكة فطرية ذكية.
         </div>
@@ -56,7 +56,7 @@ export default function Chapter02() {
           التي لا تستطيع الجذور الوصول إليها، وتذيب الفوسفور غير القابل للذوبان وتحوله لشكل يمتص.
         </p>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>حقيقة صادمة:</strong> أكثر من 90% من النباتات البرية تعيش في علاقة تكافلية مع
           فطريات الميكورايزا. بدونها، لا توجد غابات مطيرة، لا سهول خصبة، لا محاصيل ناجحة في الطبيعة.
           الزراعة الحديثة بالحراثة والمبيدات دمرت هذه الشبكة في معظم الأراضي الزراعية.
@@ -64,11 +64,11 @@ export default function Chapter02() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Network className="text-teal-500" />
             المحاكي: شبكة الميكورايزا التفاعلية
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             استكشف كيف تتبادل النباتات والفطريات الموارد تحت الأرض، ولاحظ تأثير الحراثة على الشبكة:
           </p>
           <MycorrhizaeNetworkSim />
@@ -111,7 +111,7 @@ export default function Chapter02() {
           </li>
         </ol>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> الشبكة الفطرية هي البنية التحتية الخفية للتربة الخصبة.
           قرارك بعدم الحراثة هو أهم استثمار في صحة تربتك على المدى الطويل. الفطر لا يحتاج منك
           شراءه — فقط لا تقتله.
@@ -119,7 +119,7 @@ export default function Chapter02() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-05-ecosystems-export/chapter01">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: أكوابونيك

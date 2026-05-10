@@ -60,11 +60,7 @@ export const ColdChainSim = () => {
     : days;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-blue-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-sky-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-200 dark:border-blue-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -72,8 +68,8 @@ export const ColdChainSim = () => {
               <Snowflake className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">غرفة التبريد (Cold Chain)</h3>
-              <p className="text-xs text-slate-500">حفظ التفاح في سلسلة التبريد — التحكم بالحرارة والإيثيلين</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">غرفة التبريد (Cold Chain)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">حفظ التفاح في سلسلة التبريد — التحكم بالحرارة والإيثيلين</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -99,8 +95,8 @@ export const ColdChainSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 shadow-inner">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-inner">
               <motion.div
                 className="absolute inset-0"
                 animate={{
@@ -253,10 +249,10 @@ export const ColdChainSim = () => {
                   />
                 </div>
               </div>
-              <div className="bg-slate-800 text-white p-3 rounded-xl">
-                <div className="text-[10px] text-slate-400 font-bold">أيام التخزين</div>
-                <div className="text-xl font-black font-mono">{days}</div>
-                <div className="text-[9px] text-slate-500 mt-1">العمر التقديري: {estimatedLife} يوم</div>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold">أيام التخزين</div>
+                <div className="text-xl font-black font-mono text-slate-800 dark:text-white">{days}</div>
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 mt-1">العمر التقديري: {estimatedLife} يوم</div>
               </div>
             </div>
 
@@ -276,7 +272,7 @@ export const ColdChainSim = () => {
               </button>
               <button
                 onClick={resetSim}
-                className="py-2.5 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-1.5 text-sm"
+                className="py-2.5 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-1.5 text-sm"
               >
                 <RotateCcw size={16} />
                 إعادة تعيين
@@ -306,7 +302,7 @@ export const ColdChainSim = () => {
             )}
 
             {!isRunning && (
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 text-center">
+              <div className="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 text-center">
                 اضبط درجة الحرارة والإيثيلين، ثم اضغط "ابدأ المحاكاة".
               </div>
             )}

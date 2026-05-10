@@ -12,46 +12,46 @@ import { RatioBlender } from "../../../common/simulators/RatioBlender";
 export default function Chapter12() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
         <Link
           to="/book-02-science-toolbox"
-          className="hover:text-blue-600 flex items-center gap-1"
+          className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1"
         >
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 12 من 15</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
         لغة الأرقام (3): النسب والخلط (PPM)
       </h1>
 
       <div className="prose-custom">
-        <p className="lead text-xl text-slate-700 font-medium">
+        <p className="lead text-xl text-slate-700 dark:text-slate-300 font-medium">
           الكيمياء بدون رياضيات هي قنبلة موقوتة. إضافة "ملعقة" زائدة من المبيد
           قد تحرق المحصول بالكامل. المهندس لا يتعامل بـ "البركة"، بل يتعامل بـ
           "التراكيز".
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
-          <div className="bg-purple-50 p-6 rounded-2xl border border-purple-100">
-            <h3 className="text-purple-800 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
+          <div className="bg-purple-50 dark:bg-purple-900/30 p-6 rounded-2xl border border-purple-100 dark:border-purple-800">
+            <h3 className="text-purple-800 dark:text-purple-200 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
               <Percent size={20} />
               النسبة المئوية (%)
             </h3>
-            <p className="text-sm text-slate-700 mb-0">
-              إذا قال لك المهندس: "رش مبيداً بتركيز <strong>1%</strong>". ماذا
-              يعني؟ يعني أن كل 100 لتر ماء، تأخذ 1 لتر مبيد. (ببساطة: اضرب حجم
-              الماء في 0.01).
+                    <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
+                      إذا قال لك المهندس: "رش مبيداً بتركيز <strong>1%</strong>". ماذا
+                      يعني؟ يعني أن كل 100 لتر ماء، تأخذ 1 لتر مبيد. (ببساطة: اضرب حجم
+                      الماء في 0.01).
             </p>
           </div>
 
-          <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100">
-            <h3 className="text-rose-800 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
+          <div className="bg-rose-50 dark:bg-rose-900/30 p-6 rounded-2xl border border-rose-100 dark:border-rose-800">
+            <h3 className="text-rose-800 dark:text-rose-200 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
               <FlaskConical size={20} />
               الجزء في المليون (PPM)
             </h3>
-            <p className="text-sm text-slate-700 mb-0">
+            <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
               وهو مقياس أدق للأشياء المركزة جداً.
               <strong>1 PPM = 1 غرام في 1000 لتر ماء (طن ماء).</strong>
               تخيل مدى الدقة! قطرة صغيرة جداً في برميل ضخم.
@@ -77,13 +77,13 @@ export default function Chapter12() {
           </li>
         </ul>
 
-        <div className="flex items-start gap-4 p-4 border rounded-xl bg-red-50 shadow-sm mt-8">
-          <div className="bg-white p-2 rounded-full shadow-sm text-red-600">
+        <div className="flex items-start gap-4 p-4 border rounded-xl bg-red-50 dark:bg-red-900/30 shadow-sm mt-8">
+          <div className="bg-white dark:bg-slate-900 p-2 rounded-full shadow-sm text-red-600 dark:text-red-400">
             <AlertTriangle size={24} />
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 mt-0">تحذير السمية</h4>
-            <p className="text-sm text-slate-600 mb-0">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 mt-0">تحذير السمية</h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-0">
               الخطأ في حساب النسب لا يضيع المال فقط، بل قد يجعل الثمار "سامة"
               ويمنعها من التصدير بسبب متبقيات المبيدات (MRLs). الرياضيات هنا هي
               صمام الأمان لصحة المستهلك.
@@ -92,7 +92,7 @@ export default function Chapter12() {
         </div>
       </div>
 
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-02-science-toolbox/chapter11">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق

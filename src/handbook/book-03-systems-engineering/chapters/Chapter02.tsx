@@ -7,19 +7,19 @@ export default function Chapter02() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 2 من 12</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         💧 عجز الضغط البخاري (VPD): مقياس العطش الحقيقي
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> لماذا تذبل نباتاتي في يوم غائم رغم أن التربة رطبة؟ لأن الجو "يشرب" من النبات أسرع مما تستطيع الجذور التعويض!
         </div>
 
@@ -52,7 +52,7 @@ export default function Chapter02() {
           </li>
         </ul>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>مثال واقعي:</strong> في تونس، يوم صيفي حار (38°C) برطوبة 30% — الـ VPD يصل إلى 4.5 kPa. 
           هذا يعني أن الجو "يعطش" النبات بقوة 4 أضعاف النطاق الطبيعي! في هذه الظروف، 
           حتى الري بالتنقيط المستمر لا يكفي — لأن المشكلة ليست في التربة، بل في الجو.
@@ -60,11 +60,11 @@ export default function Chapter02() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Wind className="text-cyan-500" />
             المحاكي: غرفة التحكم في VPD
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             حرك درجة الحرارة والرطوبة لترى كيف يتغير VPD، ولاحظ متى تغلق الثغور:
           </p>
           <VPDSimulator />
@@ -79,7 +79,7 @@ export default function Chapter02() {
           <li><strong>التدفئة (Heating):</strong> رفع الحرارة يخفض الرطوبة النسبية ويرفع VPD — مفيد في الشتاء الرطب.</li>
         </ol>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> لا ترش الماء بناءً على "شعورك" بالعطش. 
           استخدم حساس VPD (أو احسبه من Temp + RH). حافظ على VPD بين 0.8 و 1.2 kPa 
           لتحصل على أقصى إنتاجية من كل قطرة ماء وكل واط من الضوء.
@@ -87,7 +87,7 @@ export default function Chapter02() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-03-systems-engineering/chapter01">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: ساعات البرودة

@@ -7,19 +7,19 @@ export default function Chapter03() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 3 من 12</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🔥 التنفس الضوئي: الخطأ التطوري في C3 (ومحرك التوربو في C4)
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> لماذا ينتج القمح (قمحنا) نصف ما تنتجه الذرة في الصيف الحار؟ 
           الجواب ليس في الماء أو السماد، بل في خطأ في تصميم "المحرك" على المستوى الجزيئي!
         </div>
@@ -37,7 +37,7 @@ export default function Chapter03() {
           هذه العملية تسمى <strong>"التنفس الضوئي" (Photorespiration)</strong>.
         </p>
 
-        <div className="bg-red-50 border-r-4 border-red-400 p-4 my-6">
+        <div className="bg-red-50 dark:bg-red-900/30 border-r-4 border-red-400 dark:border-red-500 p-4 my-6">
           <strong>الخسارة الاقتصادية:</strong> تخيل مصنع تعبئة مياه، بدلاً من تعبئة المياه النقية، 
           يملأ العبوات بالرمل — ويدفع فاتورة الكهرباء ثمن ذلك! هذا ما يفعله التنفس الضوئي: 
           يحرق السكر (طاقة) بلا أي إنتاج.
@@ -74,11 +74,11 @@ export default function Chapter03() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Cpu className="text-emerald-500" />
             المحاكي: محرك Rubisco التفاعلي
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             بدّل بين القمح (C3) والذرة (C4) وارفع الحرارة لترى كيف يتصرف كل محرك:
           </p>
           <RubiscoEngine />
@@ -104,7 +104,7 @@ export default function Chapter03() {
           </li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> فهم الفرق بين C3 و C4 يحدد اختيارك للمحصول حسب الموسم. 
           ازرع C3 في الشتاء البارد و C4 في الصيف الحار. 
           هذا وحده قد يضاعف أرباحك دون زيادة تكلفة ماء أو سماد واحدة.
@@ -112,7 +112,7 @@ export default function Chapter03() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-03-systems-engineering/chapter02">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: VPD

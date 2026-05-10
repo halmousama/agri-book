@@ -51,11 +51,7 @@ export const YieldEstimator = () => {
   const revenue = totalOil * current.revenuePerKg;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-orange-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-orange-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-orange-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* ===== الهيدر ===== */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -64,8 +60,8 @@ export const YieldEstimator = () => {
               <TrendingUp className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">حاسبة الغلة — Rendement</h3>
-              <p className="text-xs text-slate-500">تقدير إنتاج الزيت وجودته حسب مرحلة الحصاد</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">حاسبة الغلة — Rendement</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">تقدير إنتاج الزيت وجودته حسب مرحلة الحصاد</p>
             </div>
           </div>
           <motion.div
@@ -84,7 +80,7 @@ export const YieldEstimator = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري (الثمرة) ===== */}
-          <div className="w-full lg:w-72 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-72 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 160 200" className="w-full h-full">
               <defs>
                 <radialGradient id="oliveBg" cx="50%" cy="50%" r="50%">
@@ -163,12 +159,12 @@ export const YieldEstimator = () => {
             </div>
 
             {/* الإيرادات */}
-            <div className="bg-slate-800 text-white rounded-2xl p-5">
-              <span className="text-sm text-slate-400 font-bold block mb-1">قيمة الزيت المنتج (طن واحد)</span>
-              <span className="text-3xl font-black font-mono">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700">
+              <span className="text-sm text-slate-500 dark:text-slate-400 font-bold block mb-1">قيمة الزيت المنتج (طن واحد)</span>
+              <span className="text-3xl font-black font-mono text-slate-800 dark:text-white">
                 ${revenue.toFixed(0)}
               </span>
-              <div className="text-xs text-slate-500 mt-1">
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 السعر: ${current.revenuePerKg}/kg — جودة: {current.quality}
               </div>
             </div>

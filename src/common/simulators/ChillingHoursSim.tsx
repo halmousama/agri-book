@@ -48,11 +48,7 @@ export const ChillingHoursSim = () => {
   const progress = Math.min((accumulatedHours / CHILLING_THRESHOLD) * 100, 100);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-blue-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-sky-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-200 dark:border-blue-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -60,8 +56,8 @@ export const ChillingHoursSim = () => {
               <ThermometerSnowflake className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">ساعة البرودة (Chilling Hours)</h3>
-              <p className="text-xs text-slate-500">كسر سكون الأشجار الشتوي لضمان إزهار متجانس</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">ساعة البرودة (Chilling Hours)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">كسر سكون الأشجار الشتوي لضمان إزهار متجانس</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -86,9 +82,9 @@ export const ChillingHoursSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             <motion.div
-              className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-white shadow-inner"
+              className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-inner"
               animate={{
                 background: isWinter
                   ? "linear-gradient(180deg, #1e3a5f 0%, #94a3b8 100%)"
@@ -226,7 +222,7 @@ export const ChillingHoursSim = () => {
                   ) : (
                     <Sun className="text-amber-400" size={18} />
                   )}
-                  <span className="font-bold text-slate-700 text-sm">
+                  <span className="font-bold text-slate-700 dark:text-slate-300 text-sm">
                     {isWinter ? "الشتاء — تراكم البرودة" : "الربيع — الإزهار"}
                   </span>
                 </div>
@@ -251,7 +247,7 @@ export const ChillingHoursSim = () => {
                 ) : (
                   <button
                     onClick={reset}
-                    className="col-span-2 py-2.5 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition-all active:scale-[0.97] text-sm flex items-center justify-center gap-2"
+                    className="col-span-2 py-2.5 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold transition-all active:scale-[0.97] text-sm flex items-center justify-center gap-2"
                   >
                     <RotateCcw size={16} /> إعادة التجربة
                   </button>
@@ -260,9 +256,9 @@ export const ChillingHoursSim = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-slate-800 text-white p-3 rounded-xl">
-                <div className="text-[10px] text-slate-400 font-bold">الساعات المتراكمة</div>
-                <div className="text-xl font-black font-mono text-blue-400">{accumulatedHours}</div>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold">الساعات المتراكمة</div>
+                <div className="text-xl font-black font-mono text-blue-600 dark:text-blue-400">{accumulatedHours}</div>
               </div>
               <div className={cn(
                 "p-3 rounded-xl border",

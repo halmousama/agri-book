@@ -7,19 +7,19 @@ export default function Chapter01() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 1 من 4</span>
+        <span>الفصل 1 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🛰️ العيون الفضائية: مؤشر NDVI والطائرات المسيّرة
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> كيف تعرف صحة نباتاتك في مزرعة مساحتها 100 هكتار دون أن تمشي بينها كل يوم؟ الحقول الكبيرة تحتاج عيوناً من السماء.
         </div>
 
@@ -35,8 +35,8 @@ export default function Chapter01() {
         </p>
 
         <h2>المعادلة السرية</h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 my-6 text-center">
-          <span className="text-2xl font-mono font-bold text-slate-800">
+        <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-6 my-6 text-center">
+          <span className="text-2xl font-mono font-bold text-slate-800 dark:text-slate-200">
             NDVI = (NIR - Red) / (NIR + Red)
           </span>
         </div>
@@ -51,7 +51,7 @@ export default function Chapter01() {
           <li><strong>أقل من 0:</strong> مياه مفتوحة أو سحب أو ثلوج.</li>
         </ul>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>معلومة تقنية:</strong> أول من استخدم NDVI كان <strong>NASA</strong> في السبعينيات عبر قمر Landsat-1. 
           اليوم، أي مزارع يستطيع الحصول على صور NDVI عبر طائرة درون ب 500 دولار، 
           أو حتى عبر تطبيقات مجانية تستخدم صور Sentinel-2 الأوروبي.
@@ -79,7 +79,7 @@ export default function Chapter01() {
           <li><strong>الأحمر:</strong> مشكلة حادة — قد تحتاج لري فوري أو تدخل علاجي.</li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>التطبيق العملي:</strong> مزارع قمح في السعودية استخدم درون NDVI واكتشف أن رقعة كاملة من الحقل 
           (20%) لا تحصل على كفايتها من المياه بسبب خلل في الرشاش المحوري. 
           في موسم واحد، وفر 30% من مياه الري وزاد الإنتاج 12%.
@@ -87,11 +87,11 @@ export default function Chapter01() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Satellite className="text-emerald-500" />
             المحاكي: درون NDVI التفاعلي
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             حرك المؤشر لترى كيف تتغير ألوان NDVI مع صحة النبات، 
             وكيف تكتشف المشكلة قبل أن تراها العين المجردة:
           </p>
@@ -108,7 +108,7 @@ export default function Chapter01() {
           <li><strong>طائرات ذاتية القيادة:</strong> تخرج من محطتها تلقائياً كل 3 أيام، تمسح الحقل، وترسل التقرير لهاتفك.</li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> NDVI هو أداة التشخيص المبكر الأقوى في الزراعة الحديثة. 
           لا تنتظر حتى ترى النبات يذبل بعينك — العين البشرية ترى المشكلة بعد فوات الأوان. 
           العين الفضائية تراها قبل 7-10 أيام.
@@ -116,7 +116,7 @@ export default function Chapter01() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-04-hardware-ai">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق

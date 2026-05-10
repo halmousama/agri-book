@@ -7,19 +7,19 @@ export default function Chapter01() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 1 من 4</span>
+        <span>الفصل 1 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🐟 أكوابونيك (Aquaponics) — مصنع الحياة المغلق
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> كيف نبني نظاماً غذائياً مكتفياً ذاتياً ينتج السمك والخضراوات معاً،
           دون تصريف للمياه الملوثة ودون أسمدة كيماوية؟
         </div>
@@ -59,7 +59,7 @@ export default function Chapter01() {
           </li>
         </ol>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>توازن الكتلة الحيوية:</strong> السر الهندسي في الأكوابونيك هو النسبة بين كتلة السمك
           وكتلة النباتات. سمك أكثر = أمونيا أكثر = نباتات أكثر. إذا اختل التوازن، إما يموت السمك
           من التسمم أو تجوع النباتات. النسبة الذهبية المبدئية: 1 كغ سمك لكل 1 م² من أحواض النمو.
@@ -67,11 +67,11 @@ export default function Chapter01() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Droplets className="text-teal-500" />
             المحاكي: دورة الأكوابونيك التفاعلية
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             تفاعل مع مكونات النظام المغلق — السمك، المرشح الحيوي، والنباتات — لترى كيف تعمل الحلقة:
           </p>
           <AquaponicsCycleSim />
@@ -97,7 +97,7 @@ export default function Chapter01() {
           </li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> الأكوابونيك ليس مجرد "سمك وخس". إنه نظام هندسي دقيق
           يعيد تدوير كل قطرة ماء وكل ذرة نيتروجين. كفاءة المياه تفوق الزراعة التقليدية بـ 10 مرات،
           ولا يحتاج أي سماد خارجي. التحدي الحقيقي هو إدارة التوازن وصحة البكتيريا.
@@ -105,7 +105,7 @@ export default function Chapter01() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-05-ecosystems-export">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق

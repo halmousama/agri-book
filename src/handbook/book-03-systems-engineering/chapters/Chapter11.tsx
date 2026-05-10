@@ -6,19 +6,19 @@ import { BreakEvenChart } from "../../../common/simulators/BreakEvenChart";
 export default function Chapter11() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 11 من 12</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         💰 نقطة التعادل (Break-Even Point): متى تبدأ المزرعة بجني الأرباح؟
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> اشتريت أرضاً، حفرت بئراً، اشتريت مضخات، غرست 1000 شجرة زيتون، أنفقت 200,000 دولار. متى تسترد رأس مالك وتبدأ الربح الحقيقي؟ هذا ما تجيب عنه نقطة التعادل.
         </div>
 
@@ -40,11 +40,11 @@ export default function Chapter11() {
         </ul>
 
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <PiggyBank className="text-emerald-500" />
             المحاكي: حاسبة التعادل التفاعلية
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             غيّر التكاليف الثابتة والمتغيرة وسعر البيع لترى كيف تتغير نقطة التعادل على الرسم البياني:
           </p>
           <BreakEvenChart />
@@ -57,12 +57,12 @@ export default function Chapter11() {
           <li>زيادة الفرق بين سعر البيع والتكلفة المتغيرة (الهامش) تخفض نقطة التعادل.</li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> لا تبدأ مشروعاً زراعياً دون حساب نقطة التعادل أولاً. إذا كانت نقطة التعادل أعلى من طاقتك الإنتاجية المتوقعة، فأنت تخطط لخسارة مالية. خطط ربحك قبل أن تزرع.
         </div>
       </div>
 
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-03-systems-engineering/chapter10">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: معادلة الإنتاج

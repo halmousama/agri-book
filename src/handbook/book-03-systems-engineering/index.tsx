@@ -67,7 +67,7 @@ export default function Book03Intro() {
       <div className="mb-12">
         <Link
           to="/"
-          className="inline-flex items-center text-slate-500 hover:text-amber-600 transition-colors font-medium"
+          className="inline-flex items-center text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium"
         >
           <ArrowRight size={18} className="ml-2" /> العودة للمكتبة
         </Link>
@@ -75,23 +75,23 @@ export default function Book03Intro() {
 
       {/* Hero Section */}
       <div className="text-center mb-16 space-y-6">
-        <div className="inline-flex p-4 bg-amber-50 rounded-full mb-4 border border-amber-100">
-          <Tractor size={48} className="text-amber-700" />
+        <div className="inline-flex p-4 bg-amber-50 dark:bg-amber-900/30 rounded-full mb-4 border border-amber-100 dark:border-amber-800">
+          <Tractor size={48} className="text-amber-700 dark:text-amber-300" />
         </div>
-        <h1 className="text-5xl font-extrabold text-slate-900 leading-tight">
+        <h1 className="text-5xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
           هندسة الأنظمة
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
           من الشجرة الواحدة إلى إدارة آلاف الأشجار — ننتقل من مستوى "الخلية" إلى
           مستوى "النظام البيئي" المتكامل: المناخ، الحساسات، الماء، والاقتصاد.
         </p>
       </div>
 
       {/* Philosophy Box */}
-      <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-16 relative overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 mb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2 h-full bg-amber-500"></div>
         <div className="prose-custom">
-          <h3 className="text-2xl font-bold text-amber-800 mb-4">
+          <h3 className="text-2xl font-bold text-amber-800 dark:text-amber-200 mb-4">
             لماذا هذا الكتاب هو "الوحش النهائي"؟
           </h3>
           <p>
@@ -106,7 +106,7 @@ export default function Book03Intro() {
             قبل أن يفقس البيض، كيف تحسب نقطة التعادل المالي، وكيف تحفظ ثمارك
             باردة لمدة 6 أشهر لتصدرها للخارج.
           </p>
-          <p className="font-bold text-amber-900">
+          <p className="font-bold text-amber-900 dark:text-amber-100">
             هذا هو الفرق بين "فلاح يزرع" و "مهندس يدير نظاماً زراعياً متكاملاً".
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Book03Intro() {
 
       {/* The 4 Sections Roadmap */}
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8 flex items-center gap-2">
           <BookOpen className="text-amber-600" />
           خارطة النظام (4 أقسام — 12 محطة هندسية)
         </h2>
@@ -123,32 +123,32 @@ export default function Book03Intro() {
           {sections.map((section, idx) => (
             <div
               key={idx}
-              className="bg-slate-50 rounded-2xl border border-slate-200 p-6 hover:border-amber-300 transition-all"
+              className="bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:border-amber-300 dark:hover:border-amber-600 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 <div className="flex items-center gap-4 min-w-[250px]">
-                  <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl shadow-sm">
                     {section.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800 text-lg">
+                    <h4 className="font-bold text-slate-800 dark:text-slate-200 text-lg">
                       {section.title}
                     </h4>
-                    <span className="text-xs font-bold text-slate-400">
+                    <span className="text-xs font-bold text-slate-400 dark:text-slate-500">
                       3 فصول
                     </span>
                   </div>
                 </div>
 
                 <div className="flex-1">
-                  <p className="text-slate-600 mb-4 font-medium">
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 font-medium">
                     {section.desc}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {section.chapters.map((chapter, idx2) => (
                       <span
                         key={idx2}
-                        className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-500"
+                        className="px-3 py-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full text-xs text-slate-500 dark:text-slate-400"
                       >
                         {idx2 + 1}. {chapter}
                       </span>
@@ -163,8 +163,8 @@ export default function Book03Intro() {
 
       {/* Tech stack badge */}
       <div className="text-center mb-16">
-        <div className="inline-flex flex-wrap gap-3 justify-center text-xs text-slate-400">
-          <span className="px-3 py-1.5 bg-slate-50 rounded-full border border-slate-200">
+        <div className="inline-flex flex-wrap gap-3 justify-center text-xs text-slate-400 dark:text-slate-500">
+          <span className="px-3 py-1.5 bg-slate-50 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700">
             📡 مستشعرات IoT
           </span>
           <span className="px-3 py-1.5 bg-slate-50 rounded-full border border-slate-200">
@@ -197,7 +197,7 @@ export default function Book03Intro() {
           </Button>
         </Link>
         <Link to="/">
-          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 text-slate-600 hover:bg-slate-50">
+          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
             <BookOpen size={24} />
             العودة للدليل الشامل
           </Button>

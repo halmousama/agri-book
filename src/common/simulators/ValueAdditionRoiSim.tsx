@@ -168,7 +168,7 @@ export const ValueAdditionRoiSim = () => {
   const isPremium = roi > 150;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-indigo-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-indigo-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-indigo-200 dark:border-indigo-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-violet-200/10 rounded-full blur-3xl" />
@@ -181,10 +181,10 @@ export const ValueAdditionRoiSim = () => {
               <TrendingUp className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 القيمة المضافة — ROI وسلسلة التوريد
               </h3>
-              <p className="text-xs text-slate-500">من زيتون خام إلى علامة تجارية عالمية</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">من زيتون خام إلى علامة تجارية عالمية</p>
             </div>
           </div>
           <motion.div
@@ -199,7 +199,7 @@ export const ValueAdditionRoiSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري المطور ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 260 350" className="w-full h-full">
               <defs>
                 <linearGradient id="stageActive" x1="0" y1="0" x2="0" y2="1">

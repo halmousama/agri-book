@@ -7,10 +7,10 @@ export default function Chapter04() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
       {/* Navigation */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
         <Link
           to="/book-01-nature-logic"
-          className="hover:text-green-600 flex items-center gap-1"
+          className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1"
         >
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
@@ -18,12 +18,12 @@ export default function Chapter04() {
       </div>
 
       {/* Hero */}
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
         مصنع الرزق: قانون العامل المحدد
       </h1>
 
       <div className="prose-custom">
-        <p className="lead text-xl text-slate-700 font-medium">
+        <p className="lead text-xl text-slate-700 dark:text-slate-300 font-medium">
           تخيل أنك تبني جداراً. لديك 1000 طوبة، لكن لديك أسمنت يكفي لـ 10 طوبات
           فقط. كم طوبة ستبني؟ الإجابة: 10 فقط. بقية الطوب لا قيمة له.
         </p>
@@ -35,12 +35,12 @@ export default function Chapter04() {
           الثمار).
         </p>
 
-        <div className="bg-yellow-50 p-6 rounded-2xl border-r-4 border-yellow-400 my-8">
-          <h3 className="text-yellow-700 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
+        <div className="bg-yellow-50 dark:bg-yellow-900/30 p-6 rounded-2xl border-r-4 border-yellow-400 dark:border-yellow-500 my-8">
+          <h3 className="text-yellow-700 dark:text-yellow-300 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
             <Sun size={20} />
             المعادلة الذهبية
           </h3>
-          <p className="mb-0 text-slate-700 font-mono text-sm md:text-base">
+          <p className="mb-0 text-slate-700 dark:text-slate-300 font-mono text-sm md:text-base">
             ماء (من الجذر) + CO₂ (من الهواء) + ضوء (طاقة) ⇇{" "}
             <strong>سكر + أكسجين</strong>
           </p>
@@ -68,13 +68,13 @@ export default function Chapter04() {
           </li>
         </ul>
 
-        <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 shadow-sm mt-8">
-          <div className="bg-white p-2 rounded-full shadow-sm text-blue-600">
+        <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 dark:bg-slate-800 shadow-sm mt-8">
+          <div className="bg-white dark:bg-slate-900 p-2 rounded-full shadow-sm text-blue-600 dark:text-blue-400">
             <Database size={24} />
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 mt-0">هل تعلم؟</h4>
-            <p className="text-sm text-slate-600 mb-0">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100 mt-0">هل تعلم؟</h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-0">
               95% من وزن النبتة الجاف يأتي من "الهواء والماء" (كربون وهيدروجين
               وأكسجين). السماد الذي نشتريه بالمال يمثل فقط 5% من وزن المحصول!
               نحن نزرع "الهواء" حرفياً، والضوء هو الذي يعقده ليصبح مادة صلبة.
@@ -84,7 +84,7 @@ export default function Chapter04() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-01-nature-logic/chapter03">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> الفصل السابق: مضخة النتح

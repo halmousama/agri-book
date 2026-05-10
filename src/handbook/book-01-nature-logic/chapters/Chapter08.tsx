@@ -7,21 +7,21 @@ export default function Chapter08() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
         {/* Navigation */}
-        <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-            <Link to="/book-01-nature-logic" className="hover:text-green-600 flex items-center gap-1">
+        <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+            <Link to="/book-01-nature-logic" className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 8 من 12</span>
         </div>
 
         {/* Hero */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
             خزائن الأرض: الرمل والطين (المصفاة والإسفنجة)
         </h1>
 
         <div className="prose-custom">
             
-            <p className="lead text-xl text-slate-700 font-medium">
+            <p className="lead text-xl text-slate-700 dark:text-slate-300 font-medium">
                 التربة بالنسبة للمهندس ليست مجرد "وسخ". هي <strong>الخزنة</strong> التي تضع فيها أموالك (الماء والسماد).
             </p>
             
@@ -30,28 +30,29 @@ export default function Chapter08() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 my-8">
-                <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
-                    <h3 className="text-yellow-800 font-bold text-lg mt-0 mb-2">
+                <div className="bg-yellow-50 dark:bg-yellow-900/30 p-6 rounded-2xl border border-yellow-200 dark:border-yellow-700">
+                    <h3 className="text-yellow-800 dark:text-yellow-200 font-bold text-lg mt-0 mb-2">
                         1. التربة الرملية (المصفاة)
                     </h3>
-                    <p className="text-sm text-slate-700 mb-0">
+                    <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
                         حبيباتها كبيرة (صخور صغيرة). المسافات بينها واسعة.
                         <br/>
                         <strong>المشكلة:</strong> هي "خزنة مثقوبة". الماء والسماد يمران خلالها ويهربان للأعماق بعيداً عن الجذور.
                     </p>
                 </div>
 
-                <div className="bg-red-50 p-6 rounded-2xl border border-red-200">
-                    <h3 className="text-red-800 font-bold text-lg mt-0 mb-2">
+                <div className="bg-red-50 dark:bg-red-900/30 p-6 rounded-2xl border border-red-200 dark:border-red-700">
+                    <h3 className="text-red-800 dark:text-red-200 font-bold text-lg mt-0 mb-2">
                         2. التربة الطينية (الإسفنجة)
                     </h3>
-                    <p className="text-sm text-slate-700 mb-0">
+                    <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
                         حبيباتها دقيقة جداً (صفائح). تلتصق ببعضها كالمغناطيس.
                         <br/>
                         <strong>المشكلة:</strong> هي "خزنة مغلقة". تمسك الماء بقوة شديدة لدرجة أنها قد تمنع الهواء عن الجذور فتخنقها.
                     </p>
                 </div>
             </div>
+
 
             {/* المحاكي */}
             <div className="my-12">
@@ -74,13 +75,13 @@ export default function Chapter08() {
                 وازرع على "مصاطب" (أكوام ترابية) ليصرف الماء الزائد بفعل الجاذبية.
             </p>
 
-            <div className="flex items-start gap-4 p-4 border rounded-xl bg-stone-50 shadow-sm mt-8">
-                <div className="bg-white p-2 rounded-full shadow-sm text-stone-600">
+            <div className="flex items-start gap-4 p-4 border rounded-xl bg-stone-50 dark:bg-stone-800/50 shadow-sm mt-8">
+                <div className="bg-white dark:bg-slate-900 p-2 rounded-full shadow-sm text-stone-600 dark:text-stone-400">
                     <PaintBucket size={24} />
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-900 mt-0">الحل السحري: المادة العضوية (الكمبوست)</h4>
-                    <p className="text-sm text-slate-600 mb-0">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 mt-0">الحل السحري: المادة العضوية (الكمبوست)</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-0">
                         هل تعلم أن "السباخ/الغبار" يعالج المشكلتين؟
                         <br/>
                         في الرمل: يعمل كإسفنجة ليمسك الماء.
@@ -93,7 +94,7 @@ export default function Chapter08() {
         </div>
 
         {/* Navigation Bottom */}
-        <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+        <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
             <Link to="/book-01-nature-logic/chapter07">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> الفصل السابق: البوتاسيوم

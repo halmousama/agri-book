@@ -59,11 +59,11 @@ export const AppRouter = () => {
           ))}
 
           <Route path="*" element={
-            <div className="flex h-screen items-center justify-center bg-slate-50 font-cairo text-center p-6">
+            <div className="flex h-screen items-center justify-center bg-slate-50 dark:bg-slate-950 font-cairo text-center p-6">
               <div>
-                <h1 className="text-6xl font-extrabold text-slate-300 mb-4">404</h1>
-                <p className="text-xl font-bold text-slate-700 mb-2">هذا الحقل لم يُزرع بعد!</p>
-                <p className="text-slate-500 mb-8">عذراً أيها المهندس، الصفحة التي تبحث عنها غير موجودة.</p>
+                <h1 className="text-6xl font-extrabold text-slate-300 dark:text-slate-600 mb-4">404</h1>
+                <p className="text-xl font-bold text-slate-700 dark:text-slate-300 mb-2">هذا الحقل لم يُزرع بعد!</p>
+                <p className="text-slate-500 dark:text-slate-400 mb-8">عذراً أيها المهندس، الصفحة التي تبحث عنها غير موجودة.</p>
                 <a href="/" className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 font-bold transition-colors">
                   العودة للمزرعة (الرئيسية)
                 </a>

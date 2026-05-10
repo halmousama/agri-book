@@ -23,11 +23,7 @@ export const VolumeTank = () => {
   const isLarge = volumeLiters > 500000;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-blue-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-indigo-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-blue-200 dark:border-blue-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* ===== الهيدر ===== */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -36,8 +32,8 @@ export const VolumeTank = () => {
               <Cylinder className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">حاسبة الأحجام — مكعب / لتر</h3>
-              <p className="text-xs text-slate-500">حساب سعة الخزانات المائية الزراعية</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">حاسبة الأحجام — مكعب / لتر</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">حساب سعة الخزانات المائية الزراعية</p>
             </div>
           </div>
           <motion.div
@@ -56,7 +52,7 @@ export const VolumeTank = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري (3D مبسط) ===== */}
-          <div className="w-full lg:w-80 h-80 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-80 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             <div className="perspective-1000 w-full h-full flex items-center justify-center">
               <motion.div
                 className="relative transform-style-3d"
@@ -89,14 +85,14 @@ export const VolumeTank = () => {
               </motion.div>
             </div>
 
-            <div className="absolute bottom-3 left-3 bg-white/80 px-3 py-1 rounded-lg text-xs font-bold text-slate-500 border shadow-sm">
+            <div className="absolute bottom-3 left-3 bg-white/80 dark:bg-slate-800/80 px-3 py-1 rounded-lg text-xs font-bold text-slate-500 dark:text-slate-400 border dark:border-slate-700 shadow-sm">
               تمثيل منظور 3D
             </div>
           </div>
 
           {/* ===== لوحة التحكم ===== */}
           <div className="flex-1 space-y-3">
-            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+            <div className="bg-slate-50 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-4">
               <Slider
                 label="الطول"
                 value={length}
@@ -129,9 +125,9 @@ export const VolumeTank = () => {
 
             {/* عدادات الحجم */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-800 p-4 rounded-xl text-center shadow-lg">
-                <span className="block text-slate-400 text-xs font-bold mb-1">الحجم الهندسي</span>
-                <span className="text-xl font-black text-white font-mono">
+              <div className="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl text-center shadow-lg border border-slate-200 dark:border-slate-700">
+                <span className="block text-slate-500 dark:text-slate-400 text-xs font-bold mb-1">الحجم الهندسي</span>
+                <span className="text-xl font-black text-slate-800 dark:text-white font-mono">
                   {volumeCubicMeter.toLocaleString()} m³
                 </span>
               </div>

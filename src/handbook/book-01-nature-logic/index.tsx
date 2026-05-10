@@ -86,7 +86,7 @@ export default function Book01Intro() {
       <div className="mb-12">
         <Link
           to="/"
-          className="inline-flex items-center text-slate-500 hover:text-green-600 transition-colors font-medium"
+          className="inline-flex items-center text-slate-500 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
         >
           <ArrowRight size={18} className="ml-2" /> العودة للمكتبة
         </Link>
@@ -94,23 +94,23 @@ export default function Book01Intro() {
 
       {/* Hero Section */}
       <div className="text-center mb-16 space-y-6">
-        <div className="inline-flex p-4 bg-emerald-50 rounded-full mb-4 border border-emerald-100">
-          <ScrollText size={48} className="text-emerald-700" />
+        <div className="inline-flex p-4 bg-emerald-50 dark:bg-emerald-900/30 rounded-full mb-4 border border-emerald-100 dark:border-emerald-800">
+          <ScrollText size={48} className="text-emerald-700 dark:text-emerald-300" />
         </div>
-        <h1 className="text-5xl font-extrabold text-slate-900 leading-tight">
+        <h1 className="text-5xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
           منطق الطبيعة
         </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
           رحلة للتفكر في هندسة الخلق، وفهم السنن التي أودعها الله في النبات
           لنسخرها في إعمار الأرض.
         </p>
       </div>
 
       {/* Islamic/Philosophical Intro */}
-      <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-16 relative overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 mb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
         <div className="prose-custom">
-          <h3 className="text-2xl font-bold text-emerald-800 mb-4">
+          <h3 className="text-2xl font-bold text-emerald-800 dark:text-emerald-200 mb-4">
             "أَأَنتُمْ تَزْرَعُونَهُ أَمْ نَحْنُ الزَّارِعُونَ"
           </h3>
           <p>
@@ -128,7 +128,7 @@ export default function Book01Intro() {
 
       {/* The 12 Chapters Roadmap */}
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8 flex items-center gap-2">
           <BookOpen className="text-emerald-600" />
           فصول المنهج (12 باباً للفهم العميق)
         </h2>
@@ -137,17 +137,17 @@ export default function Book01Intro() {
           {chapters.map((chapter, index) => (
             <div
               key={index}
-              className="p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-emerald-300 transition-colors group"
+              className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-colors group"
             >
               <div className="flex items-start gap-4">
-                <div className="mt-1 p-2 bg-white rounded-lg shadow-sm group-hover:scale-110 transition-transform">
+                <div className="mt-1 p-2 bg-white dark:bg-slate-900 rounded-lg shadow-sm group-hover:scale-110 transition-transform">
                   {chapter.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800 text-lg mb-1">
+                  <h4 className="font-bold text-slate-800 dark:text-slate-200 text-lg mb-1">
                     {chapter.title}
                   </h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                     {chapter.desc}
                   </p>
                 </div>

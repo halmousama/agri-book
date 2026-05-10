@@ -40,11 +40,7 @@ export const SourceSinkBalance = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-emerald-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-emerald-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-200 dark:border-emerald-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* ===== الهيدر ===== */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -53,8 +49,8 @@ export const SourceSinkBalance = () => {
               <Scale className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">ميزانية الكربون (Source-Sink)</h3>
-              <p className="text-xs text-slate-500">توازن المصدر والمصرف في النبات</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">ميزانية الكربون (Source-Sink)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">توازن المصدر والمصرف في النبات</p>
             </div>
           </div>
           <motion.div
@@ -73,7 +69,7 @@ export const SourceSinkBalance = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 200 280" className="w-full h-full">
               <defs>
                 <radialGradient id="skyGradSrc" cx="50%" cy="30%" r="70%">
@@ -213,21 +209,21 @@ export const SourceSinkBalance = () => {
             </div>
 
             {/* الميزانية الرقمية */}
-            <div className="bg-slate-800 text-white rounded-2xl p-5">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm text-slate-400 font-bold">السكر المتاح لكل ثمرة</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400 font-bold">السكر المتاح لكل ثمرة</span>
                 <span className={`font-mono font-black text-2xl ${isDeficit ? "text-red-400" : "text-emerald-400"}`}>
                   {sugarPerFruit.toFixed(1)}
                 </span>
               </div>
-              <div className="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div className="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <motion.div
                   className={`h-full rounded-full ${isDeficit ? "bg-red-500" : "bg-emerald-500"}`}
                   animate={{ width: `${(sugarPerFruit / 12) * 100}%` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
               </div>
-              <div className="flex justify-between text-xs text-slate-500 mt-1">
+              <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
                 <span>محتاج: {requiredSugar}</span>
                 <span>متاح: {totalSugar}</span>
                 <span>{isDeficit ? `عجز: ${-surplus}` : `فائض: ${surplus}`}</span>

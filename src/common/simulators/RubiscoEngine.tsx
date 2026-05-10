@@ -63,11 +63,7 @@ export const RubiscoEngine = () => {
         : "🟢 كفاءة عالية";
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-emerald-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-200 dark:border-emerald-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -76,10 +72,10 @@ export const RubiscoEngine = () => {
               <Cpu className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 محرك Rubisco (C3 vs C4)
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 إنزيم التمثيل الضوئي — كفاءة تثبيت الكربون
               </p>
             </div>
@@ -103,7 +99,7 @@ export const RubiscoEngine = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== SVG Panel ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-slate-900 border border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             {/* Microscope background */}
             <div
               className="absolute inset-0 opacity-[0.04]"
@@ -427,7 +423,7 @@ export const RubiscoEngine = () => {
                     "flex-1 py-1.5 rounded-lg text-[10px] font-bold transition-all",
                     isC3
                       ? "bg-emerald-600 text-white shadow-lg"
-                      : "bg-slate-700 text-slate-400 hover:bg-slate-600"
+                      : "bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-600"
                   )}
                 >
                   🌾 قمح (C3)
@@ -438,7 +434,7 @@ export const RubiscoEngine = () => {
                     "flex-1 py-1.5 rounded-lg text-[10px] font-bold transition-all",
                     !isC3
                       ? "bg-emerald-600 text-white shadow-lg"
-                      : "bg-slate-700 text-slate-400 hover:bg-slate-600"
+                      : "bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-600"
                   )}
                 >
                   🌽 ذرة (C4)
@@ -581,7 +577,7 @@ export const RubiscoEngine = () => {
             </motion.div>
 
             {!isC3 && (
-              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-xl p-2 text-center text-xs text-emerald-700 font-bold">
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border border-emerald-200 dark:border-emerald-700/30 rounded-xl p-2 text-center text-xs text-emerald-700 dark:text-emerald-300 font-bold">
                 💡 الذرة (C4) تقاوم الحرارة حتى 45°C بفضل مضخة PEP — مثالية
                 للمناطق الحارة والجافة.
               </div>

@@ -58,7 +58,7 @@ export const ProtectionSimulator = () => {
   const meta = INFECTION_META[infection];
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-rose-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-200 dark:border-rose-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-pink-200/10 rounded-full blur-3xl" />
@@ -71,10 +71,10 @@ export const ProtectionSimulator = () => {
               <Search className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 المجهر التشخيصي
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 تشخيص الأمراض النباتية — فطر، بكتيريا، حشرات
               </p>
             </div>
@@ -93,7 +93,7 @@ export const ProtectionSimulator = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== SVG Panel ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             <svg viewBox="0 0 200 200" className="w-full h-full">
               <defs>
                 <filter id="blurProt">

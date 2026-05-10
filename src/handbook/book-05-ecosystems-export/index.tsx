@@ -39,29 +39,29 @@ export default function Book05Intro() {
       <div className="mb-12">
         <Link
           to="/"
-          className="inline-flex items-center text-slate-500 hover:text-teal-600 transition-colors font-medium"
+          className="inline-flex items-center text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
         >
           <ArrowRight size={18} className="ml-2" /> العودة للمكتبة
         </Link>
       </div>
 
       <div className="text-center mb-16 space-y-6">
-        <div className="inline-flex p-4 bg-teal-50 rounded-full mb-4 border border-teal-100">
-          <Globe size={48} className="text-teal-700" />
+        <div className="inline-flex p-4 bg-teal-50 dark:bg-teal-900/30 rounded-full mb-4 border border-teal-100 dark:border-teal-800">
+          <Globe size={48} className="text-teal-700 dark:text-teal-300" />
         </div>
-        <h1 className="text-5xl font-extrabold text-slate-900 leading-tight">
+        <h1 className="text-5xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
           الأنظمة المتكاملة وهندسة التصدير
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
           من إدارة النظم البيئية المغلقة إلى اختراق الأسواق العالمية — المهندس
           الفلاحي ليس مزارعاً، بل هو رائد أعمال ومهندس بيئي في آن واحد.
         </p>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-16 relative overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 mb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2 h-full bg-teal-500"></div>
         <div className="prose-custom">
-          <h3 className="text-2xl font-bold text-teal-800 mb-4">
+          <h3 className="text-2xl font-bold text-teal-800 dark:text-teal-200 mb-4">
             لماذا هذا الكتاب هو "التتويج"؟
           </h3>
           <p>
@@ -74,14 +74,14 @@ export default function Book05Intro() {
             ستروي أحفادك؟ كيف تصدر لأوروبا بدون أن تُرد شحنتك؟ وكيف تحوّل
             محصولك من "سلعة رخيصة" إلى "علامة تجارية فاخرة"؟
           </p>
-          <p className="font-bold text-teal-900">
+          <p className="font-bold text-teal-900 dark:text-teal-100">
             هنا تصبح مهندساً فلاحياً عالمياً.
           </p>
         </div>
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8 flex items-center gap-2">
           <BookOpen className="text-teal-600" />
           خارطة الطريق (4 محطات عالمية)
         </h2>
@@ -90,17 +90,17 @@ export default function Book05Intro() {
             <Link
               key={index}
               to={`/book-05-ecosystems-export/chapter0${index + 1}`}
-              className="block p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-teal-300 hover:bg-white transition-all group"
+              className="block p-6 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-300 dark:hover:border-teal-600 hover:bg-white dark:hover:bg-slate-700 transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-white dark:bg-slate-900 rounded-xl shadow-sm group-hover:scale-110 transition-transform">
                   {chapter.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800 text-lg mb-1">
+                  <h4 className="font-bold text-slate-800 dark:text-slate-200 text-lg mb-1">
                     {index + 1}. {chapter.title}
                   </h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                     {chapter.desc}
                   </p>
                 </div>
@@ -118,7 +118,7 @@ export default function Book05Intro() {
           </Button>
         </Link>
         <Link to="/">
-          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 text-slate-600 hover:bg-slate-50">
+          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
             <BookOpen size={24} />
             العودة للدليل الشامل
           </Button>

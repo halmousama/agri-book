@@ -47,11 +47,7 @@ export const BreakEvenChart = () => {
   const totalProfitAt30k = isProfitable ? (pricePerUnit - varCostPerUnit) * 30000 - fixedCost : 0;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-orange-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-orange-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-orange-200 dark:border-orange-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -59,8 +55,8 @@ export const BreakEvenChart = () => {
               <PiggyBank className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">نقطة التعادل (Break-Even Point)</h3>
-              <p className="text-xs text-slate-500">تحليل التكاليف والإيرادات لتحديد نقطة الربح</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">نقطة التعادل (Break-Even Point)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">تحليل التكاليف والإيرادات لتحديد نقطة الربح</p>
             </div>
           </div>
           <motion.div
@@ -85,7 +81,7 @@ export const BreakEvenChart = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== الرسم البياني ===== */}
-          <div className="flex-1 h-80 bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
+          <div className="flex-1 h-80 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={chartData}
@@ -202,14 +198,14 @@ export const BreakEvenChart = () => {
             />
 
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-slate-800 text-white p-3 rounded-xl">
-                <div className="text-[10px] text-slate-400 font-bold">ربح الوحدة</div>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold">ربح الوحدة</div>
                 <div className={cn("text-xl font-black font-mono", isProfitable ? "text-emerald-400" : "text-red-400")}>
                   {isProfitable ? `+$${profitPerUnit.toFixed(2)}` : `-$${(varCostPerUnit - pricePerUnit).toFixed(2)}`}
                 </div>
               </div>
               <div className={cn("p-3 rounded-xl border", totalProfitAt30k > 0 ? "bg-emerald-50 border-emerald-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600">الربح عند 30k وحدة</div>
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-400">الربح عند 30k وحدة</div>
                 <div className={cn("text-xl font-black font-mono", totalProfitAt30k > 0 ? "text-emerald-600" : "text-red-600")}>
                   {totalProfitAt30k > 0 ? `+$${totalProfitAt30k.toLocaleString()}` : `-$${Math.abs(totalProfitAt30k).toLocaleString()}`}
                 </div>

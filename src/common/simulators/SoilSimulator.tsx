@@ -105,7 +105,7 @@ export const SoilSimulator = () => {
   const wiltAngle = isWilting ? 35 : 0;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-amber-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-amber-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-amber-200 dark:border-amber-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-stone-200/10 rounded-full blur-3xl" />
@@ -118,8 +118,8 @@ export const SoilSimulator = () => {
               <Layers className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">مختبر التربة والري — هيدرولوجيا</h3>
-              <p className="text-xs text-slate-500">محاكاة تسرب الماء في أنواع التربة المختلفة</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">مختبر التربة والري — هيدرولوجيا</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">محاكاة تسرب الماء في أنواع التربة المختلفة</p>
             </div>
           </div>
           <motion.div
@@ -167,7 +167,7 @@ export const SoilSimulator = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch">
           {/* ===== المشهد الفلاحي (SVG) ===== */}
-          <div className="w-full lg:w-80 h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-2 relative">
+          <div className="w-full lg:w-80 h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-2 relative">
             <svg viewBox="0 0 200 400" className="w-full h-full absolute inset-0">
               <defs>
                 <radialGradient id="soilSun" cx="85%" cy="10%" r="20%">

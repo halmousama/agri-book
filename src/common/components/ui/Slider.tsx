@@ -22,7 +22,7 @@ export const Slider = ({ label, value, min, max, unit, color = "emerald", classN
     const percentage = ((value - min) / (max - min)) * 100;
 
     return (
-        <div className={cn("flex flex-col gap-2 w-full", className)}>
+        <div dir="ltr" className={cn("flex flex-col gap-2 w-full", className)}>
             <div className="flex justify-between items-center text-sm font-bold text-slate-700">
                 <span>{label}</span>
                 <span className={cn("px-2 py-1 rounded-md text-white shadow-sm text-xs", bgMap[color])}>

@@ -133,12 +133,7 @@ export const ExportCustomsSim = () => {
     : 0;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-rose-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-orange-200/10 rounded-full blur-3xl" />
-      </div>
-
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-200 dark:border-rose-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -146,10 +141,10 @@ export const ExportCustomsSim = () => {
               <ShieldBan className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 MRL & PHI — هندسة التصدير إلى الاتحاد الأوروبي
               </h3>
-              <p className="text-xs text-slate-500">جواز السفر العالمي للشحنات الزراعية</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">جواز السفر العالمي للشحنات الزراعية</p>
             </div>
           </div>
           <motion.div
@@ -164,7 +159,7 @@ export const ExportCustomsSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري المطور ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 260 340" className="w-full h-full">
               <defs>
                 <radialGradient id="appleGlowBad" cx="50%" cy="50%" r="50%">
@@ -604,7 +599,7 @@ export const ExportCustomsSim = () => {
             {/* إعادة تعيين */}
             <button
               onClick={resetSim}
-              className="w-full py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition-all active:scale-[0.97] text-sm flex items-center justify-center gap-1.5"
+              className="w-full py-2 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold transition-all active:scale-[0.97] text-sm flex items-center justify-center gap-1.5"
             >
               <RotateCcw size={14} />
               إعادة المحاكاة

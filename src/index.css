@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: 'Cairo', ui-sans-serif, system-ui, sans-serif;
   --font-cairo: 'Cairo', sans-serif;
@@ -20,24 +22,25 @@
 @layer base {
   body {
     @apply bg-surface-50 text-surface-900 font-cairo antialiased selection:bg-emerald-100 selection:text-emerald-900;
+    @apply dark:bg-surface-900 dark:text-slate-100 dark:selection:bg-emerald-800/30 dark:selection:text-emerald-200;
   }
 }
 
 @layer components {
 
-  /* زجاجية (Glassmorphism) */
   .glass-panel {
     @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+    @apply dark:bg-slate-900/60 dark:border-slate-700/30;
   }
 
-  /* بطاقات عصرية */
   .modern-card {
     @apply bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+    @apply dark:bg-slate-900 dark:border-slate-700/60;
   }
 
-  /* تنسيق النصوص للقراءة (Prose) */
   .prose-custom {
     @apply max-w-none text-slate-700 leading-relaxed;
+    @apply dark:text-slate-300;
   }
 
   .prose-custom p {
@@ -46,10 +49,12 @@
 
   .prose-custom h2 {
     @apply text-3xl font-bold text-slate-900 mt-12 mb-6;
+    @apply dark:text-slate-100;
   }
 
   .prose-custom h3 {
     @apply text-2xl font-bold text-slate-800 mt-8 mb-4;
+    @apply dark:text-slate-200;
   }
 
   .prose-custom ul {
@@ -62,26 +67,25 @@
 
   .prose-custom strong {
     @apply font-bold text-slate-900;
+    @apply dark:text-slate-200;
   }
 
-  /* المحاكيات Custom Sliders */
   .simulator-slider {
     @apply w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer;
+    @apply dark:bg-slate-700;
   }
 
   .simulator-slider::-webkit-slider-thumb {
     @apply appearance-none w-6 h-6 rounded-full bg-primary-600 shadow cursor-pointer transition-transform hover:scale-110 active:scale-95;
   }
 
-  /* لوحة تحكم المحاكي */
   .simulator-dashboard {
     @apply bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-xl ring-1 ring-slate-900/5 my-10 relative overflow-hidden;
+    @apply dark:bg-slate-900 dark:border-slate-700 dark:ring-slate-800/50;
   }
-
 
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -93,6 +97,7 @@
 
 ::-webkit-scrollbar-thumb {
   @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+  @apply dark:bg-slate-600 dark:hover:bg-slate-500;
 }
 
 /* Page Transitions Classes (Framer Motion often handles inline, but good to have utilities) */

@@ -173,7 +173,7 @@ export const MycorrhizaeNetworkSim = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-amber-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-amber-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-amber-200 dark:border-amber-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-yellow-200/10 rounded-full blur-3xl" />
@@ -186,10 +186,10 @@ export const MycorrhizaeNetworkSim = () => {
               <Trees className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 شبكة المايكورايزا — الزراعة التجديدية
               </h3>
-              <p className="text-xs text-slate-500">شبكة الإنترنت الفطرية تحت الأرض (Wood Wide Web)</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">شبكة الإنترنت الفطرية تحت الأرض (Wood Wide Web)</p>
             </div>
           </div>
           <motion.div
@@ -204,7 +204,7 @@ export const MycorrhizaeNetworkSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد الجوفي المتطور ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 260 340" className="w-full h-full">
               <defs>
                 <radialGradient id="myceliumGlow" cx="50%" cy="50%" r="50%">
@@ -575,7 +575,7 @@ export const MycorrhizaeNetworkSim = () => {
               <div className={cn("rounded-xl p-3 border", 
                 absorptionEfficiency > 70 ? "bg-emerald-50 border-emerald-200" : 
                 absorptionEfficiency > 40 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Zap size={12} className="text-teal-500" /> كفاءة الامتصاص
                 </div>
                 <div className={cn("text-lg font-black font-mono",
@@ -592,7 +592,7 @@ export const MycorrhizaeNetworkSim = () => {
               <div className={cn("rounded-xl p-3 border",
                 soilOrganicMatter > 50 ? "bg-emerald-50 border-emerald-200" : 
                 soilOrganicMatter > 25 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Leaf size={12} className="text-amber-600" /> المادة العضوية
                 </div>
                 <div className={cn("text-lg font-black font-mono",
@@ -610,7 +610,7 @@ export const MycorrhizaeNetworkSim = () => {
 
             <div className="grid grid-cols-2 gap-2">
               <div className="rounded-xl p-3 border border-slate-200 bg-white">
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <DollarSign size={12} className="text-amber-500" /> تكلفة الأسمدة
                 </div>
                 <div className="text-lg font-black font-mono text-amber-600">
@@ -618,7 +618,7 @@ export const MycorrhizaeNetworkSim = () => {
                 </div>
               </div>
               <div className="rounded-xl p-3 border border-slate-200 bg-white">
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <BarChart3 size={12} className="text-red-500" /> خسارة المحصول
                 </div>
                 <div className="text-lg font-black font-mono text-red-600">
@@ -629,7 +629,7 @@ export const MycorrhizaeNetworkSim = () => {
 
             <div className="grid grid-cols-2 gap-2">
               <div className="rounded-xl p-3 border border-slate-200 bg-white">
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Wind size={12} className="text-blue-500" /> احتباس الماء
                 </div>
                 <div className="text-lg font-black font-mono text-blue-600">
@@ -637,7 +637,7 @@ export const MycorrhizaeNetworkSim = () => {
                 </div>
               </div>
               <div className="rounded-xl p-3 border border-slate-200 bg-white">
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Timer size={12} className="text-teal-500" /> عمليات حراثة
                 </div>
                 <div className="text-lg font-black font-mono text-teal-600">
@@ -750,7 +750,7 @@ export const MycorrhizaeNetworkSim = () => {
               </button>
               <button
                 onClick={resetSim}
-                className="px-3 py-2.5 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center gap-1"
+                className="px-3 py-2.5 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center gap-1"
               >
                 <RotateCcw size={14} />
               </button>

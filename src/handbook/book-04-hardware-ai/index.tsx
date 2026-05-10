@@ -40,30 +40,30 @@ export default function Book04Intro() {
       <div className="mb-12">
         <Link
           to="/"
-          className="inline-flex items-center text-slate-500 hover:text-purple-600 transition-colors font-medium"
+          className="inline-flex items-center text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"
         >
           <ArrowRight size={18} className="ml-2" /> العودة للمكتبة
         </Link>
       </div>
 
       <div className="text-center mb-16 space-y-6">
-        <div className="inline-flex p-4 bg-purple-50 rounded-full mb-4 border border-purple-100">
-          <Cpu size={48} className="text-purple-700" />
+        <div className="inline-flex p-4 bg-purple-50 dark:bg-purple-900/30 rounded-full mb-4 border border-purple-100 dark:border-purple-800">
+          <Cpu size={48} className="text-purple-700 dark:text-purple-300" />
         </div>
-        <h1 className="text-5xl font-extrabold text-slate-900 leading-tight">
+        <h1 className="text-5xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
           هندسة الآلات والذكاء الاصطناعي
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
           من عيون الأقمار الصناعية التي ترى العطش قبل أن تذبل الشجرة، إلى
           الأذرع الآلية التي تفرز المحصول بدقة تفوق البشر — نعبر الجسر بين
           الزراعة التقليدية وهندسة الميكاترونيكس والذكاء الاصطناعي.
         </p>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-16 relative overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 mb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2 h-full bg-purple-500"></div>
         <div className="prose-custom">
-          <h3 className="text-2xl font-bold text-purple-800 mb-4">
+          <h3 className="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-4">
             لماذا هذا الكتاب هو "ثورة المهندس"؟
           </h3>
           <p>
@@ -76,7 +76,7 @@ export default function Book04Intro() {
             المزرعة من مكان يعمل بالخبرة اليدوية إلى <strong>مصنع بيولوجي
             مؤتمت</strong> يديره المهندس من هاتفه المحمول.
           </p>
-          <p className="font-bold text-purple-900">
+          <p className="font-bold text-purple-900 dark:text-purple-100">
             هذا هو الكتاب الذي يفرق بين "مزارع تقليدي" و "مهندس زراعي
             يعيش في القرن الحادي والعشرين".
           </p>
@@ -84,7 +84,7 @@ export default function Book04Intro() {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8 flex items-center gap-2">
           <BookOpen className="text-purple-600" />
           خارطة الطريق (4 محطات هندسية)
         </h2>
@@ -93,17 +93,17 @@ export default function Book04Intro() {
             <Link
               key={index}
               to={`/book-04-hardware-ai/chapter0${index + 1}`}
-              className="block p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-purple-300 hover:bg-white transition-all group"
+              className="block p-6 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-purple-300 dark:hover:border-purple-600 hover:bg-white dark:hover:bg-slate-700 transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-white dark:bg-slate-900 rounded-xl shadow-sm group-hover:scale-110 transition-transform">
                   {chapter.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-800 text-lg mb-1">
+                  <h4 className="font-bold text-slate-800 dark:text-slate-200 text-lg mb-1">
                     {index + 1}. {chapter.title}
                   </h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                     {chapter.desc}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function Book04Intro() {
           </Button>
         </Link>
         <Link to="/">
-          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 text-slate-600 hover:bg-slate-50">
+          <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
             <BookOpen size={24} />
             العودة للدليل الشامل
           </Button>

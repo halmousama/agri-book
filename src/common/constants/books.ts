@@ -149,6 +149,10 @@ export const BOOKS: Record<string, Book> = {
             { id: "chapter02", title: "الرؤية الحاسوبية وفرز المحصول (AI Sorting)", path: "/book-04-hardware-ai/chapter02" },
             { id: "chapter03", title: "ميكانيكا التربة وانضغاطها (Soil Compaction)", path: "/book-04-hardware-ai/chapter03" },
             { id: "chapter04", title: "الري الآلي المحوري (Center Pivot)", path: "/book-04-hardware-ai/chapter04" },
+            { id: "chapter05", title: "المزارع العمودية (Vertical Farming & Aeroponics)", path: "/book-04-hardware-ai/chapter05" },
+            { id: "chapter06", title: "روبوتات السرب وإبادة الأعشاب (Swarm Robotics)", path: "/book-04-hardware-ai/chapter06" },
+            { id: "chapter07", title: "تقنية المعدلات المتغيرة (VRT Sprayer)", path: "/book-04-hardware-ai/chapter07" },
+            { id: "chapter08", title: "المستشعرات الصوتية للآفات (Acoustic Detection)", path: "/book-04-hardware-ai/chapter08" },
         ],
     },
     "book-05-ecosystems-export": {
@@ -160,6 +164,10 @@ export const BOOKS: Record<string, Book> = {
             { id: "chapter02", title: "الزراعة التجديدية (Regenerative Agriculture)", path: "/book-05-ecosystems-export/chapter02" },
             { id: "chapter03", title: "هندسة التصدير (MRL & PHI)", path: "/book-05-ecosystems-export/chapter03" },
             { id: "chapter04", title: "القيمة المضافة (Value Addition & ROI)", path: "/book-05-ecosystems-export/chapter04" },
+            { id: "chapter05", title: "الزراعة الكهروضوئية (Agrivoltaics)", path: "/book-05-ecosystems-export/chapter05" },
+            { id: "chapter06", title: "زراعة الكربون (Carbon Farming & Credits)", path: "/book-05-ecosystems-export/chapter06" },
+            { id: "chapter07", title: "تكنولوجيا البلوكشين (Blockchain Traceability)", path: "/book-05-ecosystems-export/chapter07" },
+            { id: "chapter08", title: "الزراعة الملحية (Biosaline Agriculture)", path: "/book-05-ecosystems-export/chapter08" },
         ],
     },
 };

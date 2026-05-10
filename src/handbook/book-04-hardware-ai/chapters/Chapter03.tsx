@@ -7,19 +7,19 @@ export default function Chapter03() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 3 من 4</span>
+        <span>الفصل 3 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🚜 ميكانيكا التربة وانضغاطها (Soil Compaction)
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> حقل خصب، تسميد ممتاز، ري منتظم — ولكن المحصول ضعيف. 
           الجذر لا يستطيع النمو لأن التربة تحولت إلى "خرسانة" تحت سطحها بفعل الجرارات الثقيلة.
         </div>
@@ -28,7 +28,7 @@ export default function Chapter03() {
         <p>
           لفهم الانضغاط، يجب أولاً أن تفهم مما تتكون التربة:
         </p>
-        <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 my-6">
+        <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-6 my-6">
           <ul className="space-y-2">
             <li><strong>50% مواد صلبة:</strong> رمل، طمي، طين، مواد عضوية.</li>
             <li><strong>25% ماء:</strong> في المسام بين حبيبات التربة.</li>
@@ -86,7 +86,7 @@ export default function Chapter03() {
           </li>
         </ul>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>معلومة بحثية:</strong> دراسة من جامعة Aarhus الدنماركية (2021) أظهرت أن 
           الانضغاط الناتج عن الجرارات يخفض إنتاج القمح بنسبة 15-25% سنوياً. 
           في الحقول التي تعاني من انضغاط مزمن، قد يخترق جذر واحد فقط من كل 10 جذور طبقة الهاردبان.
@@ -124,11 +124,11 @@ export default function Chapter03() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Weight className="text-orange-500" />
             المحاكي: انضغاط التربة
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             اختر أنواع الإطارات ورطوبة التربة لترى كيف يؤثر وزن الجرار على بنية التربة ونمو الجذور:
           </p>
           <TractorCompactionSim />
@@ -153,7 +153,7 @@ export default function Chapter03() {
           </li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> أخطر ما في انضغاط التربة أنك لا تراه. 
           الأرض تبدو طبيعية من فوق، لكن المشكلة تحت السطح. 
           استخدم إطارات عريضة، لا تدخل الحقل وهو مبلل، وافحص التربة بالبينيتومتر سنوياً. 
@@ -162,7 +162,7 @@ export default function Chapter03() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-04-hardware-ai/chapter02">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: الرؤية الحاسوبية وفرز المحصول

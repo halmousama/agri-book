@@ -28,7 +28,7 @@ export const TurgorSimulator = () => {
   const isModerate = waterLevel >= 30 && waterLevel <= 70;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-emerald-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-200 dark:border-emerald-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-200/10 rounded-full blur-3xl" />
@@ -41,8 +41,8 @@ export const TurgorSimulator = () => {
               <Droplets className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">مختبر ضغط الامتلاء — Turgor</h3>
-              <p className="text-xs text-slate-500">قوة الماء داخل الخلية تمنع النبات من الذبول</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">مختبر ضغط الامتلاء — Turgor</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">قوة الماء داخل الخلية تمنع النبات من الذبول</p>
             </div>
           </div>
           <motion.div

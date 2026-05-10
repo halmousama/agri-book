@@ -7,21 +7,21 @@ export default function Chapter03() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
         {/* Navigation */}
-        <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-            <Link to="/book-02-science-toolbox" className="hover:text-blue-600 flex items-center gap-1">
+        <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+            <Link to="/book-02-science-toolbox" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 3 من 15</span>
         </div>
 
         {/* Hero */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
             عصير الطبيعة: الذوبان vs الترسب
         </h1>
 
         <div className="prose-custom">
             
-            <p className="lead text-xl text-slate-700 font-medium">
+            <p className="lead text-xl text-slate-700 dark:text-slate-300 font-medium">
                 الجذور ليس لها معدة لتهضم الطعام الصلب. هي تشرب فقط.
                 لذلك، أي سماد لا يذوب في الماء بنسبة 100% هو سماد "غير موجود" بالنسبة للنبات.
             </p>
@@ -31,12 +31,12 @@ export default function Chapter03() {
                 وهو خلط المادة (السماد) في السائل (الماء) حتى تختفي تماماً وتصبح جزءاً منه.
             </p>
 
-            <div className="bg-teal-50 p-6 rounded-2xl border-r-4 border-teal-500 my-8">
-                <h3 className="text-teal-800 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
+            <div className="bg-teal-50 dark:bg-teal-900/30 p-6 rounded-2xl border-r-4 border-teal-500 my-8">
+                <h3 className="text-teal-800 dark:text-teal-200 font-bold text-lg mt-0 mb-2 flex items-center gap-2">
                     <FlaskConical size={20} />
                     نقطة التشبع (Saturation Point)
                 </h3>
-                <p className="text-sm text-slate-700 mb-0">
+                <p className="text-sm text-slate-700 dark:text-slate-300 mb-0">
                     الماء له قدرة تحمل محدودة. تخيل أنه "حافلة" لها عدد مقاعد محدد.
                     إذا أضفت ركاباً (سماداً) أكثر من عدد المقاعد، سيبقون واقفين (مترسبين).
                     الراسب في الزراعة خطير جداً: فهو يسد الأنابيب، ويحرق الشعيرات الجذرية.
@@ -55,13 +55,13 @@ export default function Chapter03() {
                 أول شجرة ستشرب ماءً صافياً، وآخر شجرة ستشرب "سماً مركزاً" وتموت.
             </p>
 
-            <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 shadow-sm mt-8">
-                <div className="bg-white p-2 rounded-full shadow-sm text-red-600">
+            <div className="flex items-start gap-4 p-4 border rounded-xl bg-slate-50 dark:bg-slate-800 shadow-sm mt-8">
+                <div className="bg-white dark:bg-slate-900 p-2 rounded-full shadow-sm text-red-600 dark:text-red-400">
                     <AlertOctagon size={24} />
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-900 mt-0">القاعدة الذهبية</h4>
-                    <p className="text-sm text-slate-600 mb-0">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 mt-0">القاعدة الذهبية</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-0">
                         "الماء أولاً، ثم السماد".
                         املأ الخزان بالماء للنصف، ثم أضف السماد تدريجياً مع التحريك، ثم أكمل الماء.
                         ولا تتجاوز أبداً حد الذوبان المكتوب على الكيس.
@@ -71,7 +71,7 @@ export default function Chapter03() {
         </div>
 
         {/* Navigation Bottom */}
-        <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+        <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
             <Link to="/book-02-science-toolbox/chapter02">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> السابق

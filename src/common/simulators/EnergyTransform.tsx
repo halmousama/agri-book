@@ -15,11 +15,7 @@ export const EnergyTransform = () => {
   const isLow = sunIntensity < 20;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-cyan-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-cyan-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-sky-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-cyan-200 dark:border-cyan-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -27,8 +23,8 @@ export const EnergyTransform = () => {
               <Zap className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">سلسلة الطاقة (التحولات)</h3>
-              <p className="text-xs text-slate-500">من ضوء الشمس → التمثيل الضوئي → طاقة حركة</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">سلسلة الطاقة (التحولات)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">من ضوء الشمس → التمثيل الضوئي → طاقة حركة</p>
             </div>
           </div>
           <motion.div
@@ -47,8 +43,8 @@ export const EnergyTransform = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري — سلسلة الطاقة ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 bg-slate-50 shadow-inner">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-inner">
               <svg viewBox="0 0 240 280" className="w-full h-full">
                 <defs>
                   <linearGradient id="sunRayGrad" x1="0" y1="0" x2="1" y2="1">
@@ -236,21 +232,21 @@ export const EnergyTransform = () => {
               </div>
             </div>
 
-            <div className="bg-slate-800 text-white p-4 rounded-xl">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400 font-bold flex items-center gap-1.5">
-                  <BatteryCharging size={14} className="text-emerald-400" /> إجمالي الطاقة
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1.5">
+                  <BatteryCharging size={14} className="text-emerald-600 dark:text-emerald-400" /> إجمالي الطاقة
                 </span>
-                <span className="font-mono font-black text-2xl text-emerald-400">{energyStored}</span>
+                <span className="font-mono font-black text-2xl text-emerald-600 dark:text-emerald-400">{energyStored}</span>
               </div>
-              <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full rounded-full bg-gradient-to-r from-amber-400 to-emerald-400"
                   animate={{ width: `${(energyStored / 500) * 100}%` }}
                   transition={{ type: "spring", stiffness: 40 }}
                 />
               </div>
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+              <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 mt-1">
                 <span>0 J</span>
                 <span>500 J (كحد أقصى)</span>
               </div>
@@ -276,7 +272,7 @@ export const EnergyTransform = () => {
               )}
             </motion.div>
 
-            <div className="bg-gradient-to-r from-amber-50 to-cyan-50 border border-amber-200 rounded-xl p-3 text-center text-xs text-amber-800 font-bold shadow-sm">
+            <div className="bg-gradient-to-r from-amber-50 to-cyan-50 dark:from-amber-900/20 dark:to-cyan-900/20 border border-amber-200 dark:border-amber-700/30 rounded-xl p-3 text-center text-xs text-amber-800 dark:text-amber-200 font-bold shadow-sm">
               💡 نحن نزرع "طاقة". أنت تأخذ طاقة الشمس المجانية، وتخزنها في "بطاريات" تسمى ثماراً وحبوباً لتبيعها.
             </div>
           </div>

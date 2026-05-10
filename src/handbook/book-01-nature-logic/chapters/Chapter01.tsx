@@ -7,14 +7,14 @@ export default function Chapter01() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32">
         {/* Navigation Top */}
-        <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-            <Link to="/book-01-nature-logic" className="hover:text-green-600 flex items-center gap-1">
+        <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+            <Link to="/book-01-nature-logic" className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 1 من 12</span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
             ميكانيكا الوقوف: سر البالون المائي
         </h1>
 
@@ -45,7 +45,7 @@ export default function Chapter01() {
                 تخيل ملايين الخلايا المتراصة بجانب بعضها، وكل واحدة منها "منفوخة" بالضغط. النتيجة؟ هيكل صلب جداً قادر على اختراق الأسفلت!
             </p>
             
-            <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+            <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
                 <strong>تطبيق عملي:</strong> عندما ترى أوراق الطماطم مرتخية في الظهيرة، لا تقل "النبتة حزينة". 
                 قل: <strong>"لقد انخفض الضغط الهيدروليكي داخل الخلايا"</strong>. 
                 علاجك ليس المواساة، بل إعادة شحن المضخات بالماء.
@@ -53,7 +53,7 @@ export default function Chapter01() {
         </div>
 
         {/* Navigation Bottom */}
-        <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+        <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
             <Link to="/book-01-nature-logic">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> السابق

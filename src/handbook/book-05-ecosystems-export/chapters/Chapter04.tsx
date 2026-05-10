@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft, TrendingUp, Package, BarChart3, CheckCircle } from "lucide-react";
+import { ArrowRight, ArrowLeft, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "../../../common/components/ui/Button";
 import { ValueAdditionRoiSim } from "../../../common/simulators/ValueAdditionRoiSim";
 
@@ -7,19 +7,19 @@ export default function Chapter04() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 4 من 4</span>
+        <span>الفصل 4 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         💎 القيمة المضافة (Value Addition &amp; ROI) — من الخام إلى الذهب
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> تنتج 1000 طن من الزيتون الخام، تبيعه بثمن بخس.
           جارك ينتج نفس الكمية لكنه يصدر زيت زيتون بكر ممتاز بثمن 10 أضعاف. الفرق ليس في
           الزيتون — الفرق في القيمة المضافة.
@@ -61,7 +61,7 @@ export default function Chapter04() {
           </li>
         </ol>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>حساب العائد على الاستثمار (ROI):</strong> إذا استثمرت 50,000$ في معصرة حديثة
           + خط تعبئة + شهادة عضوية، وكنت تنتج 10,000 لتر سنوياً، فارتفاع سعر البيع من 8$ (زيت
           خام) إلى 18$ (معبأ ومعتمد) يعني إيراداً إضافياً 100,000$ سنوياً — تسترد استثمارك في 6
@@ -70,11 +70,11 @@ export default function Chapter04() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <TrendingUp className="text-teal-500" />
             المحاكي: القيمة المضافة وحساب العائد
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             اختر المنتج، أضف مراحل المعالجة واحداً تلو الآخر، ولاحظ كيف يرتفع سعر البيع والهامش:
           </p>
           <ValueAdditionRoiSim />
@@ -108,23 +108,23 @@ export default function Chapter04() {
           </li>
         </ul>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> القيمة المضافة ليست رفاهية — إنها استراتيجية البقاء.
           في سوق عالمي مزدحم بالسلع الرخيصة، الفائز ليس من ينتج أكثر، بل من يضيف قيمة أكثر
           لكل وحدة منتج. احسب ROI لكل مرحلة قبل أن تستثمر فيها، واصعد سلم القيمة خطوة بخطوة.
         </div>
       </div>
 
-      {/* Navigation Bottom — آخر فصل يعود لمقدمة الكتاب */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      {/* Navigation Bottom */}
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-05-ecosystems-export/chapter03">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: هندسة التصدير
           </Button>
         </Link>
-        <Link to="/book-05-ecosystems-export">
+        <Link to="/book-05-ecosystems-export/chapter05">
           <Button className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700">
-            العودة إلى مقدمة الكتاب <ArrowLeft size={18} />
+            التالي: الزراعة الكهروضوئية <ArrowLeft size={18} />
           </Button>
         </Link>
       </div>

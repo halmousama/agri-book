@@ -22,11 +22,7 @@ export const AreaCalculator = () => {
   const isSparse = density < 100;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-emerald-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-emerald-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-200 dark:border-emerald-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -34,8 +30,8 @@ export const AreaCalculator = () => {
               <Map className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">التخطيط الهندسي للحقل</h3>
-              <p className="text-xs text-slate-500">حساب المسافات والعدد الأمثل للشتلات</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">التخطيط الهندسي للحقل</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">حساب المسافات والعدد الأمثل للشتلات</p>
             </div>
           </div>
           <motion.div
@@ -52,7 +48,7 @@ export const AreaCalculator = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             <svg viewBox="0 0 200 280" className="w-full h-full">
               <defs>
                 <linearGradient id="fieldGrad" x1="0" y1="0" x2="0" y2="1">
@@ -113,7 +109,7 @@ export const AreaCalculator = () => {
                 type="number"
                 value={area}
                 onChange={(e) => setArea(Math.max(100, Number(e.target.value)))}
-                className="w-full p-3 rounded-xl border border-emerald-200 font-mono text-lg focus:ring-2 focus:ring-emerald-500 bg-white"
+                className="w-full p-3 rounded-xl border border-emerald-200 dark:border-emerald-700 font-mono text-lg focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-slate-800 dark:text-white"
               />
               <span className="text-xs text-emerald-600 mt-1 block">1 هكتار = 10,000 م²</span>
             </div>
@@ -139,22 +135,22 @@ export const AreaCalculator = () => {
               />
             </div>
 
-            <div className="bg-slate-800 text-white p-4 rounded-xl flex items-center justify-between shadow-lg">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 flex items-center justify-between shadow-lg">
               <div>
-                <span className="block text-emerald-400 text-xs font-bold mb-1">الاحتياج الفعلي للشتلات:</span>
-                <span className="text-2xl font-black font-mono">{maxTrees.toLocaleString()}</span>
-                <span className="text-slate-400 text-sm mr-2">شتلة</span>
+                <span className="block text-emerald-600 dark:text-emerald-400 text-xs font-bold mb-1">الاحتياج الفعلي للشتلات:</span>
+                <span className="text-2xl font-black font-mono text-slate-800 dark:text-white">{maxTrees.toLocaleString()}</span>
+                <span className="text-slate-500 dark:text-slate-400 text-sm mr-2">شتلة</span>
               </div>
               <Trees size={32} className="text-emerald-500 opacity-50" />
             </div>
 
             <div className="grid grid-cols-2 gap-2">
               <div className="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                <div className="text-xs font-bold text-slate-600">مساحة الشجرة الواحدة</div>
+                <div className="text-xs font-bold text-slate-600 dark:text-slate-400">مساحة الشجرة الواحدة</div>
                 <div className="text-lg font-black font-mono text-emerald-600">{treeArea} م²</div>
               </div>
               <div className="bg-slate-50 rounded-xl p-3 border border-slate-200">
-                <div className="text-xs font-bold text-slate-600">الكثافة</div>
+                <div className="text-xs font-bold text-slate-600 dark:text-slate-400">الكثافة</div>
                 <div className="text-lg font-black font-mono text-emerald-600">{density.toFixed(0)}/هكتار</div>
               </div>
             </div>

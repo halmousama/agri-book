@@ -175,12 +175,7 @@ export const AquaponicsCycleSim = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-teal-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-teal-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-teal-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-200/10 rounded-full blur-3xl" />
-      </div>
-
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-teal-200 dark:border-teal-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -188,10 +183,10 @@ export const AquaponicsCycleSim = () => {
               <Fish className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 أكوابونيك — مصنع الحياة المغلق
               </h3>
-              <p className="text-xs text-slate-500">نظام تدوير مغلق: سمك ↔ بكتيريا ↔ نبات</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">نظام تدوير مغلق: سمك ↔ بكتيريا ↔ نبات</p>
             </div>
           </div>
           <motion.div
@@ -206,7 +201,7 @@ export const AquaponicsCycleSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري المطور ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 260 320" className="w-full h-full">
               <defs>
                 <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
@@ -653,7 +648,7 @@ export const AquaponicsCycleSim = () => {
 
             <div className="grid grid-cols-2 gap-2">
               <div className={cn("rounded-xl p-3 border", fishHealth > 70 ? "bg-emerald-50 border-emerald-200" : fishHealth > 40 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Heart size={12} className={fishHealth > 70 ? "text-emerald-500" : "text-red-500"} /> صحة الأسماك
                 </div>
                 <div className={cn("text-lg font-black font-mono", fishHealth > 70 ? "text-emerald-600" : fishHealth > 40 ? "text-amber-600" : "text-red-600")}>
@@ -666,7 +661,7 @@ export const AquaponicsCycleSim = () => {
                 </div>
               </div>
               <div className={cn("rounded-xl p-3 border", plantHealth > 70 ? "bg-emerald-50 border-emerald-200" : plantHealth > 40 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Sprout size={12} className={plantHealth > 70 ? "text-emerald-500" : "text-yellow-500"} /> صحة النباتات
                 </div>
                 <div className={cn("text-lg font-black font-mono", plantHealth > 70 ? "text-emerald-600" : plantHealth > 40 ? "text-amber-600" : "text-red-600")}>
@@ -733,7 +728,7 @@ export const AquaponicsCycleSim = () => {
               </button>
               <button
                 onClick={resetSim}
-                className="px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center gap-1.5"
+                className="px-4 py-2 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center gap-1.5"
               >
                 <RotateCcw size={14} />
                 إعادة

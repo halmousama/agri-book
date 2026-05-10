@@ -49,11 +49,7 @@ export const GDDPestRadar = () => {
   const daysToHatch = isActive ? Math.ceil((HATCH_THRESHOLD - gdd) / Math.max(1, dailyTemp - BASE_TEMP)) : 0;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-rose-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-pink-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-rose-200 dark:border-rose-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -61,8 +57,8 @@ export const GDDPestRadar = () => {
               <Crosshair className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">رادار الآفات (GDD)</h3>
-              <p className="text-xs text-slate-500">تتبع درجات الحرارة للتنبؤ بفقس بيض الحشرات ومكافحتها</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">رادار الآفات (GDD)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">تتبع درجات الحرارة للتنبؤ بفقس بيض الحشرات ومكافحتها</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -88,8 +84,8 @@ export const GDDPestRadar = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 shadow-inner bg-gradient-to-b from-sky-100 to-sky-50">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-inner bg-gradient-to-b from-sky-100 to-sky-50">
               <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{ backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)", backgroundSize: "16px 16px" }}
@@ -223,19 +219,19 @@ export const GDDPestRadar = () => {
               onChange={(e) => setDailyTemp(Number(e.target.value))}
             />
 
-            <div className="bg-slate-800 text-white rounded-xl p-4">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400 font-bold">وحدات الحرارة المتراكمة (GDD)</span>
-                <span className="font-mono font-black text-2xl">{gdd.toFixed(0)}</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-bold">وحدات الحرارة المتراكمة (GDD)</span>
+                <span className="font-mono font-black text-2xl text-slate-800 dark:text-white">{gdd.toFixed(0)}</span>
               </div>
-              <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
                   animate={{ width: `${progress}%` }}
                   transition={{ type: "spring", stiffness: 40 }}
                 />
               </div>
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+              <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 mt-1">
                 <span>0</span>
                 <span>عتبة الفقس: {HATCH_THRESHOLD}</span>
               </div>
@@ -246,10 +242,10 @@ export const GDDPestRadar = () => {
                 "rounded-xl p-3 border",
                 hatched ? "bg-red-50 border-red-200" : "bg-emerald-50 border-emerald-200"
               )}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-400 flex items-center gap-1">
                   <Calendar size={12} /> GDD اليوم
                 </div>
-                <div className="text-lg font-black font-mono text-slate-800">
+                <div className="text-lg font-black font-mono text-slate-800 dark:text-slate-200">
                   {Math.max(0, dailyTemp - BASE_TEMP).toFixed(1)}
                 </div>
               </div>
@@ -278,7 +274,7 @@ export const GDDPestRadar = () => {
               </button>
               <button
                 onClick={reset}
-                className="py-2.5 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-1.5 text-sm"
+                className="py-2.5 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-1.5 text-sm"
               >
                 <RotateCcw size={16} /> إعادة المحاكاة
               </button>
@@ -305,7 +301,7 @@ export const GDDPestRadar = () => {
             </motion.div>
 
             {isActive && (
-              <div className="bg-gradient-to-r from-amber-50 to-rose-50 border border-amber-200 rounded-xl p-2 text-center text-xs text-amber-800 font-bold shadow-sm">
+              <div className="bg-gradient-to-r from-amber-50 to-rose-50 dark:from-amber-900/20 dark:to-rose-900/20 border border-amber-200 dark:border-amber-700/30 rounded-xl p-2 text-center text-xs text-amber-800 dark:text-amber-200 font-bold shadow-sm">
                 💡 نصيحة: الحرارة اليوم {dailyTemp}°C تعطي GDD = {Math.max(0, dailyTemp - BASE_TEMP).toFixed(1)}/يوم. أيام حتى الفقس: {daysToHatch}.
               </div>
             )}

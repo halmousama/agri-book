@@ -111,11 +111,7 @@ export const AiSortingSim = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-violet-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-violet-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-violet-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-violet-200 dark:border-violet-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* ===== الهيدر ===== */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -124,8 +120,8 @@ export const AiSortingSim = () => {
               <Scan className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">الفرز الذكي بالرؤية الحاسوبية (AI Sorting)</h3>
-              <p className="text-xs text-slate-500">جهاز فرز آلي يعمل بالذكاء الاصطناعي</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">الفرز الذكي بالرؤية الحاسوبية (AI Sorting)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">جهاز فرز آلي يعمل بالذكاء الاصطناعي</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -142,7 +138,7 @@ export const AiSortingSim = () => {
             </button>
             <button
               onClick={reset}
-              className="px-4 py-1.5 rounded-xl text-xs font-bold border-2 border-slate-300 text-slate-600 hover:bg-slate-50 transition-all"
+              className="px-4 py-1.5 rounded-xl text-xs font-bold border-2 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
             >
               إعادة تعيين
             </button>
@@ -151,7 +147,7 @@ export const AiSortingSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== Visual Lab ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 200 280" className="w-full h-full">
               <defs>
                 <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
@@ -266,7 +262,7 @@ export const AiSortingSim = () => {
               onChange={(e) => setStrictness(Number(e.target.value))}
             />
 
-            <div className="flex justify-between text-[10px] text-slate-400 font-medium -mt-2">
+            <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-2">
               <span>⬅ سماح (هدر قليل)</span>
               <span className="text-purple-500">⬅ مثالي ({optimalStrictness}%)</span>
               <span>⬅ صرامة (هدر عال) ➡</span>
@@ -291,16 +287,16 @@ export const AiSortingSim = () => {
             {/* Advanced Metrics */}
             <div className="grid grid-cols-3 gap-3">
               <div className={cn("rounded-xl p-3 border", wastePct > 40 ? "bg-red-50 border-red-200" : wastePct > 20 ? "bg-amber-50 border-amber-200" : "bg-emerald-50 border-emerald-200")}>
-                <div className="text-[10px] font-bold text-slate-600">هدر %</div>
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-400">هدر %</div>
                 <div className={cn("text-lg font-black", wastePct > 40 ? "text-red-600" : wastePct > 20 ? "text-amber-600" : "text-emerald-600")}>{wastePct}%</div>
               </div>
               <div className={cn("rounded-xl p-3 border", qualityScore > 80 ? "bg-emerald-50 border-emerald-200" : qualityScore > 60 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200")}>
-                <div className="text-[10px] font-bold text-slate-600">الجودة</div>
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-400">الجودة</div>
                 <div className={cn("text-lg font-black", qualityScore > 80 ? "text-emerald-600" : qualityScore > 60 ? "text-amber-600" : "text-red-600")}>{qualityScore}%</div>
               </div>
-              <div className="bg-slate-800 rounded-xl p-3">
-                <div className="text-[10px] font-bold text-slate-400">الربح المتوقع</div>
-                <div className="text-lg font-black text-amber-400">{profitEstimate}$</div>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400">الربح المتوقع</div>
+                <div className="text-lg font-black text-amber-600 dark:text-amber-400">{profitEstimate}$</div>
               </div>
             </div>
 

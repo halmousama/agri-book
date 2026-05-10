@@ -7,19 +7,19 @@ export default function Chapter03() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
-      <div className="flex justify-between items-center mb-8 text-sm text-slate-500">
-        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 flex items-center gap-1">
+      <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 3 من 4</span>
+        <span>الفصل 3 من 8</span>
       </div>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">
         🛂 هندسة التصدير (MRL &amp; PHI) — جواز السفر العالمي
       </h1>
 
       <div className="prose-custom">
-        <div className="bg-amber-50 border-r-4 border-amber-400 p-4 my-6">
+        <div className="bg-amber-50 dark:bg-amber-900/30 border-r-4 border-amber-400 dark:border-amber-500 p-4 my-6">
           <strong>المشكلة الهندسية:</strong> تزرع محصولاً ممتازاً، تحصده في الوقت الذي تراه مناسباً،
           تشحنه إلى أوروبا. تصل الحاوية إلى ميناء روتردام — وتُرفض. لماذا؟ لأن بقايا المبيد
           تجاوزت الحد المسموح به بأجزاء من المليون.
@@ -66,7 +66,7 @@ export default function Chapter03() {
           ستحتاج إلى 15 يوماً بالضبط لتصل تحت الحد المسموح.
         </p>
 
-        <div className="bg-blue-50 border-r-4 border-blue-400 p-4 my-6">
+        <div className="bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-400 dark:border-blue-500 p-4 my-6">
           <strong>سيناريو واقعي:</strong> مزارع تونسي يرش مبيداً على فلفل. نصف عمر المبيد 7 أيام.
           MRL في أوروبا = 0.05 ppm. بعد 7 أيام من الرش — تركيز المبيد 50 ppm. يحتاج 10 أنصاف عمر
           (70 يوماً) ليصل تحت 0.05 ppm! إذا لم يحسب هذه المدة، ترفض شحنته وتخسر ثمن الحاوية
@@ -75,11 +75,11 @@ export default function Chapter03() {
 
         {/* المحاكي */}
         <div className="my-12">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <Shield className="text-teal-500" />
             المحاكي: الجمارك ومحطة التصدير التفاعلية
           </h3>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
             اختر المبيد، اضبط نصف العمر، وحدد موعد الحصاد — وشاهد ما يحدث في الميناء الأوروبي:
           </p>
           <ExportCustomsSim />
@@ -108,7 +108,7 @@ export default function Chapter03() {
           </li>
         </ol>
 
-        <div className="bg-emerald-50 border-r-4 border-emerald-400 p-4 my-6">
+        <div className="bg-emerald-50 dark:bg-emerald-900/30 border-r-4 border-emerald-400 dark:border-emerald-500 p-4 my-6">
           <strong>الخلاصة الهندسية:</strong> التصدير ليس مجرد زراعة جيدة — إنه إدارة دقيقة
           للوقت والجرعات والتوثيق. PHI ليس خياراً، إنه شرط للدخول إلى الأسواق العالمية.
           استثمر في مختبر تحليل بقايا المبيدات قبل أن تستثمر في التبريد والشحن.
@@ -116,7 +116,7 @@ export default function Chapter03() {
       </div>
 
       {/* Navigation Bottom */}
-      <div className="mt-16 flex justify-between items-center border-t border-slate-100 pt-8">
+      <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
         <Link to="/book-05-ecosystems-export/chapter02">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: الزراعة التجديدية

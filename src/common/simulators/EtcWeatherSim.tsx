@@ -31,11 +31,7 @@ export const EtcWeatherSim = () => {
   const waterDemand = Math.round(etc * 1000);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-sky-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-sky-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-sky-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-blue-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-sky-200 dark:border-sky-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -43,8 +39,8 @@ export const EtcWeatherSim = () => {
               <Gauge className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">محطة التبخر-نتح (ETc)</h3>
-              <p className="text-xs text-slate-500">حساب الاحتياج المائي للمحصول بناءً على الأحوال الجوية</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">محطة التبخر-نتح (ETc)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">حساب الاحتياج المائي للمحصول بناءً على الأحوال الجوية</p>
             </div>
           </div>
           <motion.div
@@ -63,8 +59,8 @@ export const EtcWeatherSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد البصري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 shadow-inner bg-gradient-to-b from-sky-100 to-sky-50">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-inner bg-gradient-to-b from-sky-100 to-sky-50">
               {/* Sun */}
               <motion.div
                 className="absolute top-4 left-6 w-10 h-10 bg-yellow-400 rounded-full shadow-xl z-10"
@@ -206,18 +202,18 @@ export const EtcWeatherSim = () => {
             />
 
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-slate-800 text-white p-3 rounded-xl">
-                <div className="text-[10px] text-slate-400 font-bold">الاحتياج المائي (ETc)</div>
-                <div className="text-xl font-black font-mono">
-                  {etc} <span className="text-sm text-slate-400">mm</span>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold">الاحتياج المائي (ETc)</div>
+                <div className="text-xl font-black font-mono text-slate-800 dark:text-white">
+                  {etc} <span className="text-sm text-slate-500 dark:text-slate-400">mm</span>
                 </div>
-                <div className="text-[9px] text-slate-500 mt-1">{waterDemand} لتر/هكتار/يوم</div>
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 mt-1">{waterDemand} لتر/هكتار/يوم</div>
               </div>
               <div className={cn(
                 "p-3 rounded-xl border",
                 isFlooded ? "bg-blue-50 border-blue-200" : isDry ? "bg-red-50 border-red-200" : "bg-emerald-50 border-emerald-200"
               )}>
-                <div className="text-[10px] font-bold text-slate-600 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 dark:text-slate-400 flex items-center gap-1">
                   <Droplets size={12} /> رطوبة التربة
                 </div>
                 <div className={cn("text-xl font-black font-mono", isDry ? "text-red-600" : "text-emerald-600")}>

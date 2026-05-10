@@ -39,11 +39,7 @@ export const FoliarStomata = () => {
     : 0;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-emerald-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-emerald-200 dark:border-emerald-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div className="flex items-center gap-3">
@@ -51,8 +47,8 @@ export const FoliarStomata = () => {
               <Spray className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">التسميد الورقي (اختراق الثغور)</h3>
-              <p className="text-xs text-slate-500">فهم آلية فتح وإغلاق الثغور لتحسين امتصاص الأسمدة</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">التسميد الورقي (اختراق الثغور)</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">فهم آلية فتح وإغلاق الثغور لتحسين امتصاص الأسمدة</p>
             </div>
           </div>
           <motion.div
@@ -71,8 +67,8 @@ export const FoliarStomata = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== المشهد المجهري ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
-            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 shadow-inner bg-gradient-to-b from-emerald-50 to-emerald-100">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
+            <div className="absolute inset-3 rounded-2xl overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-inner bg-gradient-to-b from-emerald-50 to-emerald-100">
               <div
                 className="absolute inset-0 opacity-[0.03]"
                 style={{ backgroundImage: "radial-gradient(circle, #166534 1px, transparent 1px)", backgroundSize: "8px 8px" }}
@@ -215,11 +211,11 @@ export const FoliarStomata = () => {
                   {isStomaOpen ? "مفتوحة ✓" : "مغلقة ✗"}
                 </div>
               </div>
-              <div className="bg-slate-800 text-white p-3 rounded-xl">
-                <div className="text-[10px] text-slate-400 font-bold flex items-center gap-1">
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3 border border-slate-200 dark:border-slate-700">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1">
                   <DollarSign size={12} /> الخسارة المالية
                 </div>
-                <div className="text-lg font-black font-mono text-red-400">${wasteCost.toFixed(1)}</div>
+                <div className="text-lg font-black font-mono text-red-600 dark:text-red-400">${wasteCost.toFixed(1)}</div>
               </div>
             </div>
 

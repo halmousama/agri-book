@@ -45,7 +45,7 @@ export const SolutionMixer = () => {
   const waterLevel = 60 + (amount / 100) * 60;
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-teal-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-teal-100/60 my-10 font-cairo relative">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-teal-200 dark:border-teal-700/30 my-10 font-cairo relative">
       <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-teal-200/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-200/10 rounded-full blur-3xl" />
@@ -58,10 +58,10 @@ export const SolutionMixer = () => {
               <FlaskConical className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">
                 كأس الذوبان
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 ذوبان الأسمدة — التشبع والترسيب
               </p>
             </div>
@@ -88,7 +88,7 @@ export const SolutionMixer = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== SVG Panel ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center relative">
+          <div className="w-full lg:w-80 h-auto sm:h-80 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center relative">
             <svg viewBox="0 0 200 250" className="w-full h-full drop-shadow-xl">
               <defs>
                 <linearGradient
@@ -405,7 +405,7 @@ export const SolutionMixer = () => {
                 setAmount(0);
                 setParticles([]);
               }}
-              className="w-full py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
+              className="w-full py-2 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold text-xs transition-all active:scale-[0.97] flex items-center justify-center gap-1.5"
             >
               <Trash2 size={14} />
               تفريغ وإعادة تعيين

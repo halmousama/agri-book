@@ -58,11 +58,7 @@ export const CenterPivotSim = () => {
   const rotationDuration = Math.max(3, 20 - rotationSpeed / 7);
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-br from-white to-sky-50/40 p-6 md:p-8 rounded-3xl shadow-xl border border-sky-100/60 my-10 font-cairo relative">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-sky-200/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-blue-200/10 rounded-full blur-3xl" />
-      </div>
+    <div className="overflow-x-hidden bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-sky-200 dark:border-sky-700/30 my-10 font-cairo relative">
       <div className="relative z-10">
         {/* ===== الهيدر ===== */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -71,8 +67,8 @@ export const CenterPivotSim = () => {
               <RefreshCw className="text-white" size={22} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 leading-tight">الري المحوري — Center Pivot</h3>
-              <p className="text-xs text-slate-500">نظام الرش المحوري الذكي لتوزيع المياه</p>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-tight">الري المحوري — Center Pivot</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">نظام الرش المحوري الذكي لتوزيع المياه</p>
             </div>
           </div>
           <motion.div
@@ -89,7 +85,7 @@ export const CenterPivotSim = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch lg:items-start">
           {/* ===== Visual Lab ===== */}
-          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
+          <div className="w-full lg:w-80 h-auto sm:h-96 shrink-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md p-3 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full relative">
             <svg viewBox="0 0 200 280" className="w-full h-full">
               <defs>
                 <radialGradient id="fieldGrad" cx="50%" cy="46%" r="44%">
@@ -207,7 +203,7 @@ export const CenterPivotSim = () => {
                 {isAutoRotating ? "إيقاف" : "تشغيل"}
               </button>
               <button onClick={resetRotation}
-                className="py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-2">
+                className="py-3 bg-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl font-bold transition-all active:scale-[0.97] flex items-center justify-center gap-2">
                 <RefreshCw size={18} /> إعادة الضبط
               </button>
             </div>
