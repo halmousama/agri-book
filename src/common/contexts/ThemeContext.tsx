@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem("agribooks-theme");
-    return saved === "light" || saved === "dark" ? saved : "dark";
+    return saved === "light" || saved === "dark" ? saved : "light";
   });
 
   useEffect(() => {
