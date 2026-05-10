@@ -11,8 +11,33 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../utils/cn";
 import { Slider } from "../components/ui/Slider";
 import { Alert } from "../components/ui/Alert";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const PhotosynthesisSimulator = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const C = {
+    svgBg: isDark ? "#1e293b" : "#f8fafc",
+    textMuted: isDark ? "#94a3b8" : "#64748b",
+    text: isDark ? "#cbd5e1" : "#1e293b",
+    grid: isDark ? "#334155" : "#e2e8f0",
+    surface: isDark ? "#334155" : "#f8fafc",
+    border: isDark ? "#475569" : "#cbd5e1",
+    water: isDark ? "#60a5fa" : "#3b82f6",
+    waterLight: isDark ? "#93c5fd" : "#bae6fd",
+    sky: isDark ? "#38bdf8" : "#0ea5e9",
+    sun: "#eab308",
+    sunLight: "#fef08a",
+    co2: isDark ? "#94a3b8" : "#64748b",
+    leaf: isDark ? "#4ade80" : "#22c55e",
+    leafDark: isDark ? "#22c55e" : "#16a34a",
+    leafDeep: "#14532d",
+    leafEmerald: isDark ? "#6ee7b7" : "#a7f3d0",
+    greenDark: isDark ? "#022c22" : "#064e3b",
+    greenLight: isDark ? "#064e3b" : "#f0fdf4",
+    greenLight2: isDark ? "#052e16" : "#dcfce7",
+    alertRed: "#ef4444",
+  };
   const [light, setLight] = useState(50);
   const [water, setWater] = useState(70);
   const [co2, setCo2] = useState(30);
@@ -64,10 +89,10 @@ export const PhotosynthesisSimulator = () => {
             className={cn(
               "px-3 py-1.5 rounded-xl text-xs font-bold border-2 flex items-center gap-1.5",
               isCritical
-                ? "bg-red-100 text-red-700 border-red-300"
+                ? "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border-red-300 dark:border-red-800"
                 : isWarning
-                  ? "bg-amber-100 text-amber-700 border-amber-300"
-                  : "bg-emerald-100 text-emerald-700 border-emerald-300"
+                  ? "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800"
+                  : "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800"
             )}
             animate={isCritical ? { scale: [1, 1.03, 1] } : {}}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -95,10 +120,10 @@ export const PhotosynthesisSimulator = () => {
                   x2="0"
                   y2="1"
                 >
-                  <stop offset="0%" stopColor="#4ade80" stopOpacity="0.9" />
+                  <stop offset="0%" stopColor={C.leaf} stopOpacity="0.9" />
                   <stop
                     offset="100%"
-                    stopColor="#22c55e"
+                    stopColor={C.leaf}
                     stopOpacity="0.95"
                   />
                 </linearGradient>
@@ -110,10 +135,10 @@ export const PhotosynthesisSimulator = () => {
                 >
                   <stop
                     offset="0%"
-                    stopColor="#fef08a"
+                    stopColor={C.sunLight}
                     stopOpacity="0.6"
                   />
-                  <stop offset="100%" stopColor="#fef08a" stopOpacity="0" />
+                  <stop offset="100%" stopColor={C.sunLight} stopOpacity="0" />
                 </radialGradient>
                 <filter id="glowPs">
                   <feGaussianBlur stdDeviation="2" result="blur" />
@@ -130,7 +155,7 @@ export const PhotosynthesisSimulator = () => {
                 y="0"
                 width="280"
                 height="300"
-                fill="#f8fafc"
+                fill={C.svgBg}
                 rx="8"
               />
               <rect
@@ -175,18 +200,18 @@ export const PhotosynthesisSimulator = () => {
               <g opacity={light / 100} className="transition-opacity duration-300">
                 <motion.path
                   d="M140,10 L140,60"
-                  stroke="#eab308"
+                  stroke={C.sun}
                   strokeWidth="5"
                   strokeDasharray="8 4"
                   animate={{ strokeDashoffset: [20, 0] }}
                   transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                 />
-                <polygon points="136,60 144,60 140,68" fill="#eab308" />
+                <polygon points="136,60 144,60 140,68" fill={C.sun} />
                 <text
                   x="150"
                   y="35"
                   fontSize="9"
-                  fill="#eab308"
+                  fill={C.sun}
                   fontWeight="bold"
                 >
                   ضوء {light}%
@@ -197,7 +222,7 @@ export const PhotosynthesisSimulator = () => {
               <g opacity={co2 / 100} className="transition-opacity duration-300">
                 <motion.path
                   d="M20,140 L70,140"
-                  stroke="#64748b"
+                  stroke={C.co2}
                   strokeWidth="5"
                   strokeDasharray="8 4"
                   animate={{ strokeDashoffset: [20, 0] }}
@@ -207,12 +232,12 @@ export const PhotosynthesisSimulator = () => {
                     ease: "linear",
                   }}
                 />
-                <polygon points="70,136 70,144 78,140" fill="#64748b" />
+                <polygon points="70,136 70,144 78,140" fill={C.co2} />
                 <text
                   x="25"
                   y="130"
                   fontSize="9"
-                  fill="#64748b"
+                  fill={C.co2}
                   fontWeight="bold"
                 >
                   CO₂ {co2}%
@@ -223,7 +248,7 @@ export const PhotosynthesisSimulator = () => {
               <g opacity={water / 100} className="transition-opacity duration-300">
                 <motion.path
                   d="M140,290 L140,240"
-                  stroke="#3b82f6"
+                  stroke={C.water}
                   strokeWidth="5"
                   strokeDasharray="8 4"
                   animate={{ strokeDashoffset: [0, 20] }}
@@ -233,12 +258,12 @@ export const PhotosynthesisSimulator = () => {
                     ease: "linear",
                   }}
                 />
-                <polygon points="136,240 144,240 140,232" fill="#3b82f6" />
+                <polygon points="136,240 144,240 140,232" fill={C.water} />
                 <text
                   x="150"
                   y="265"
                   fontSize="9"
-                  fill="#3b82f6"
+                  fill={C.water}
                   fontWeight="bold"
                 >
                   H₂O {water}%
@@ -251,7 +276,7 @@ export const PhotosynthesisSimulator = () => {
                 <motion.path
                   d="M-70,0 Q-35,-55 0,-65 Q35,-55 70,0 Q35,55 0,65 Q-35,55 -70,0"
                   fill="url(#leafGrad)"
-                  stroke="#16a34a"
+                  stroke={C.leafDark}
                   strokeWidth="3"
                   animate={{
                     scale: isOperating ? [1, 1.02, 1] : 1,
@@ -265,14 +290,14 @@ export const PhotosynthesisSimulator = () => {
                 {/* Midrib */}
                 <path
                   d="M-60,0 L60,0"
-                  stroke="#14532d"
+                  stroke={C.leafDeep}
                   strokeWidth="2.5"
                   opacity="0.5"
                 />
                 {/* Side veins */}
                 <path
                   d="M-35,0 L-15,-25 M-35,0 L-15,25 M0,0 L20,-35 M0,0 L20,35 M35,0 L50,-20 M35,0 L50,20"
-                  stroke="#14532d"
+                  stroke={C.leafDeep}
                   strokeWidth="1.5"
                   opacity="0.35"
                 />
@@ -282,9 +307,9 @@ export const PhotosynthesisSimulator = () => {
                   cx="0"
                   cy="0"
                   r="30"
-                  fill="#064e3b"
+                  fill={C.greenDark}
                   opacity="0.85"
-                  stroke="#4ade80"
+                  stroke={C.leaf}
                   strokeWidth="2"
                 />
                 <text
@@ -293,7 +318,7 @@ export const PhotosynthesisSimulator = () => {
                   textAnchor="middle"
                   fontSize="16"
                   fontWeight="black"
-                  fill="#4ade80"
+                  fill={C.leaf}
                 >
                   {Math.round(productionRate)}%
                 </text>
@@ -303,7 +328,7 @@ export const PhotosynthesisSimulator = () => {
                   textAnchor="middle"
                   fontSize="8"
                   fontWeight="bold"
-                  fill="#a7f3d0"
+                  fill={C.leafEmerald}
                 >
                   طاقة سكر
                 </text>
@@ -322,8 +347,8 @@ export const PhotosynthesisSimulator = () => {
                         width="12"
                         height="12"
                         rx="3"
-                        fill="#f8fafc"
-                        stroke="#cbd5e1"
+                        fill={C.surface}
+                        stroke={C.border}
                         strokeWidth="1.5"
                         initial={{ opacity: 0, x: 0 }}
                         animate={{
@@ -343,7 +368,7 @@ export const PhotosynthesisSimulator = () => {
                       x="240"
                       y="132"
                       fontSize="8"
-                      fill="#64748b"
+                      fill={C.textMuted}
                       fontWeight="bold"
                     >
                       سكر (غذاء)
@@ -356,8 +381,8 @@ export const PhotosynthesisSimulator = () => {
                         cx="90"
                         cy="120"
                         r="3.5"
-                        fill="#bae6fd"
-                        stroke="#0ea5e9"
+                        fill={C.waterLight}
+                        stroke={C.sky}
                         strokeWidth="0.5"
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: [0, 0.8, 0], y: -40 }}
@@ -373,7 +398,7 @@ export const PhotosynthesisSimulator = () => {
                       x="80"
                       y="90"
                       fontSize="8"
-                      fill="#3b82f6"
+                      fill={C.sky}
                       fontWeight="bold"
                     >
                       O₂
@@ -384,58 +409,58 @@ export const PhotosynthesisSimulator = () => {
 
               {/* === Waste indicators === */}
               <g transform="translate(5, 280)">
-                <text x="0" y="8" fontSize="6" fill="#64748b">
+                <text x="0" y="8" fontSize="6" fill={C.textMuted}>
                   ضوء {light.toFixed(0)}%
                 </text>
-                <rect x="25" y="2" width="40" height="4" rx="2" fill="#e2e8f0" />
+                <rect x="25" y="2" width="40" height="4" rx="2" fill={C.grid} />
                 <motion.rect
                   x="25"
                   y="2"
                   height="4"
                   rx="2"
-                  fill="#eab308"
+                  fill={C.sun}
                   animate={{ width: `${(light / 100) * 40}px` }}
                 />
                 {wastedLight > 0 && (
-                  <text x="68" y="8" fontSize="5" fill="#ef4444">
+                  <text x="68" y="8" fontSize="5" fill={C.alertRed}>
                     هدر {wastedLight.toFixed(0)}%
                   </text>
                 )}
               </g>
               <g transform="translate(105, 280)">
-                <text x="0" y="8" fontSize="6" fill="#64748b">
+                <text x="0" y="8" fontSize="6" fill={C.textMuted}>
                   ماء {water.toFixed(0)}%
                 </text>
-                <rect x="25" y="2" width="40" height="4" rx="2" fill="#e2e8f0" />
+                <rect x="25" y="2" width="40" height="4" rx="2" fill={C.grid} />
                 <motion.rect
                   x="25"
                   y="2"
                   height="4"
                   rx="2"
-                  fill="#3b82f6"
+                  fill={C.water}
                   animate={{ width: `${(water / 100) * 40}px` }}
                 />
                 {wastedWater > 0 && (
-                  <text x="68" y="8" fontSize="5" fill="#ef4444">
+                  <text x="68" y="8" fontSize="5" fill={C.alertRed}>
                     هدر {wastedWater.toFixed(0)}%
                   </text>
                 )}
               </g>
               <g transform="translate(205, 280)">
-                <text x="0" y="8" fontSize="6" fill="#64748b">
+                <text x="0" y="8" fontSize="6" fill={C.textMuted}>
                   CO₂ {co2.toFixed(0)}%
                 </text>
-                <rect x="28" y="2" width="40" height="4" rx="2" fill="#e2e8f0" />
+                <rect x="28" y="2" width="40" height="4" rx="2" fill={C.grid} />
                 <motion.rect
                   x="28"
                   y="2"
                   height="4"
                   rx="2"
-                  fill="#64748b"
+                  fill={C.co2}
                   animate={{ width: `${(co2 / 100) * 40}px` }}
                 />
                 {wastedCo2 > 0 && (
-                  <text x="72" y="8" fontSize="5" fill="#ef4444">
+                  <text x="72" y="8" fontSize="5" fill={C.alertRed}>
                     هدر {wastedCo2.toFixed(0)}%
                   </text>
                 )}
@@ -479,13 +504,13 @@ export const PhotosynthesisSimulator = () => {
                 className={cn(
                   "rounded-xl p-2 border",
                   isCritical
-                    ? "bg-red-50 border-red-200"
+                    ? "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800"
                     : isWarning
-                      ? "bg-amber-50 border-amber-200"
-                      : "bg-emerald-50 border-emerald-200"
+                      ? "bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+                      : "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-800"
                 )}
               >
-                <div className="text-[9px] font-bold text-slate-600">
+                <div className="text-[9px] font-bold text-slate-600 dark:text-slate-400">
                   الإنتاج الفعلي
                 </div>
                 <div
@@ -500,7 +525,7 @@ export const PhotosynthesisSimulator = () => {
                 >
                   {Math.round(productionRate)}%
                 </div>
-                <div className="w-full h-1.5 bg-slate-200 rounded-full mt-1 overflow-hidden">
+                  <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mt-1 overflow-hidden">
                   <motion.div
                     className={cn(
                       "h-full rounded-full",
@@ -515,8 +540,8 @@ export const PhotosynthesisSimulator = () => {
                   />
                 </div>
               </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-2">
-                <div className="text-[9px] font-bold text-slate-600">
+              <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-2">
+                <div className="text-[9px] font-bold text-slate-600 dark:text-slate-400">
                   العامل المحدد
                 </div>
                 <div
@@ -577,7 +602,7 @@ export const PhotosynthesisSimulator = () => {
             </motion.div>
 
             {isOptimal && (
-              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-xl p-2 text-center text-xs text-emerald-700 font-bold">
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50 border border-emerald-200 dark:border-emerald-800 rounded-xl p-2 text-center text-xs text-emerald-700 dark:text-emerald-300 font-bold">
                 💡 مثالي! استمر بنفس النسب — حافظ على توازن الضوء والماء وCO₂
                 لأقصى إنتاج.
               </div>

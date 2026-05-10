@@ -2,6 +2,7 @@
 
 **منصة تعليمية تفاعلية باللغة العربية — تدمج علم الأحياء بهندسة الأنظمة الزراعية**
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-🌐-22c55e?style=for-the-badge)](https://halmousama.github.io/agri-book/)
 [![Built with React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev)
@@ -10,14 +11,25 @@
 [![Recharts](https://img.shields.io/badge/Recharts-3-22B5BF?logo=recharts&logoColor=white)](https://recharts.org)
 [![License: Educational](https://img.shields.io/badge/License-Educational%20Open%20Source-brightgreen)](LICENSE)
 
+> 🌐 **المنصة مباشرة:** [halmousama.github.io/agri-book](https://halmousama.github.io/agri-book/)
+
 ---
 
 ## ✨ نظرة عامة
 
 AgriBooks منصة تعليمية تفاعلية متكاملة باللغة العربية، تستهدف **المهندسين الفلاحيين** و**طلاب العلوم الزراعية** في الوطن العربي. تشرح العلوم الزراعية من الخلية إلى الحصاد، ومن الكيمياء إلى الاقتصاد، عبر **5 أقسام رئيسية** و**55 محاكياً تفاعلياً** بتقنيات الويب الحديثة.
 
-> 📸 **لقطة الشاشة:**
-> ![AgriBooks Homepage](public/home-screenshot.png)
+---
+
+## 🌗 معرض الصور — Dark Mode vs Light Mode
+
+| الوضع النهاري (Light) | الوضع الليلي (Dark) |
+|----------------------|---------------------|
+| ![مختبر النيتروجين — Light](public/screenshots/nitrogen-light.png) | ![مختبر النيتروجين — Dark](public/screenshots/nitrogen-dark.png) |
+| ![مختبر التربة — Light](public/screenshots/soil-light.png) | ![مختبر التربة — Dark](public/screenshots/soil-dark.png) |
+| ![مفاعل التركيب الضوئي — Light](public/screenshots/photosynthesis-light.png) | ![مفاعل التركيب الضوئي — Dark](public/screenshots/photosynthesis-dark.png) |
+
+> جميع المحاكيات تتكيف تلقائياً مع السمة عبر CSS variables و `useTheme` hook — SVG, Recharts, والنصوص كلها متجاوبة مع Dark Mode.
 
 ---
 

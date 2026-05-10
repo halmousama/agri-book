@@ -17,8 +17,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../utils/cn";
 import { Slider } from "../components/ui/Slider";
 import { Alert } from "../components/ui/Alert";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const NitrogenSimulator = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const C = {
+    svgBg: isDark ? "#0f172a" : "#f0fdf4",
+    svgBg2: isDark ? "#020617" : "#dcfce7",
+    soilTop: "#78350f",
+    soilBottom: "#451a03",
+    root: "#92400e",
+    textMuted: isDark ? "#94a3b8" : "#64748b",
+    text: isDark ? "#cbd5e1" : "#1e293b",
+    grid: isDark ? "#334155" : "#e2e8f0",
+    border: isDark ? "#475569" : "#e2e8f0",
+    surface: isDark ? "#1e293b" : "white",
+    barRed: "#ef4444",
+    barGreen: isDark ? "#4ade80" : "#22c55e",
+    barAmber: "#f59e0b",
+    barBlue: isDark ? "#60a5fa" : "#3b82f6",
+    barDarkGreen: isDark ? "#22c55e" : "#16a34a",
+    leafGreen: "#22c55e",
+    leafDark: "#166534",
+    fruitRed: "#ef4444",
+    fruitOrange: "#f97316",
+    pest: "#1a1a1a",
+    nh4: isDark ? "#4ade80" : "#16a34a",
+    no3: isDark ? "#60a5fa" : "#3b82f6",
+  };
   const [nLevel, setNLevel] = useState(50);
   const [soilPH, setSoilPH] = useState(6.8);
   const [rainIntensity, setRainIntensity] = useState(30);
@@ -86,27 +113,27 @@ export const NitrogenSimulator = () => {
       case "severe-deficiency":
         return {
           label: "🔴 نقص حاد!",
-          color: "bg-red-100 text-red-700 border-red-300",
+          color: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border-red-300 dark:border-red-800",
         };
       case "mild-deficiency":
         return {
           label: "🟡 نقص خفيف",
-          color: "bg-amber-100 text-amber-700 border-amber-300",
+          color: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800",
         };
       case "optimal":
         return {
           label: "✅ نمو متوازن",
-          color: "bg-emerald-100 text-emerald-700 border-emerald-300",
+          color: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800",
         };
       case "excess":
         return {
           label: "🔵 هيجان خضري",
-          color: "bg-blue-100 text-blue-700 border-blue-300",
+          color: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800",
         };
       case "toxicity":
         return {
           label: "🟣 سمية نيتروجين!",
-          color: "bg-purple-100 text-purple-700 border-purple-300",
+          color: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-800",
         };
     }
   };
@@ -149,12 +176,12 @@ export const NitrogenSimulator = () => {
             <svg viewBox="0 0 260 320" className="w-full h-full">
               <defs>
                 <linearGradient id="nBg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#f0fdf4" />
-                  <stop offset="100%" stopColor="#dcfce7" />
+                  <stop offset="0%" stopColor={C.svgBg} />
+                  <stop offset="100%" stopColor={C.svgBg2} />
                 </linearGradient>
                 <linearGradient id="nSoil" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#78350f" />
-                  <stop offset="100%" stopColor="#451a03" />
+                  <stop offset="0%" stopColor={C.soilTop} />
+                  <stop offset="100%" stopColor={C.soilBottom} />
                 </linearGradient>
                 <filter id="nGlow">
                   <feGaussianBlur stdDeviation="2" result="blur" />
@@ -173,10 +200,10 @@ export const NitrogenSimulator = () => {
 
               {/* جذور */}
               <g opacity="0.6">
-                <path d="M125,250 Q120,270 115,290" stroke="#92400e" strokeWidth="3" fill="none" />
-                <path d="M130,245 Q135,265 140,285" stroke="#92400e" strokeWidth="2.5" fill="none" />
-                <path d="M120,248 Q110,260 105,275" stroke="#92400e" strokeWidth="2" fill="none" />
-                <path d="M135,250 Q145,262 150,278" stroke="#92400e" strokeWidth="2" fill="none" />
+                <path d="M125,250 Q120,270 115,290" stroke={C.root} strokeWidth="3" fill="none" />
+                <path d="M130,245 Q135,265 140,285" stroke={C.root} strokeWidth="2.5" fill="none" />
+                <path d="M120,248 Q110,260 105,275" stroke={C.root} strokeWidth="2" fill="none" />
+                <path d="M135,250 Q145,262 150,278" stroke={C.root} strokeWidth="2" fill="none" />
               </g>
 
               {/* جزيئات NH₄+ و NO₃- في التربة */}
@@ -187,7 +214,7 @@ export const NitrogenSimulator = () => {
                     x={15 + (i % 8) * 29}
                     y={248 + Math.floor(i / 8) * 14}
                     fontSize="5"
-                    fill="#16a34a"
+                    fill={C.nh4}
                     fontWeight="bold"
                     animate={{ opacity: [0.4, 0.8, 0.4] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
@@ -203,7 +230,7 @@ export const NitrogenSimulator = () => {
                     x={20 + (i % 6) * 35}
                     y={260 + Math.floor(i / 6) * 14}
                     fontSize="5"
-                    fill="#3b82f6"
+                    fill={C.no3}
                     fontWeight="bold"
                     animate={{
                       opacity: [0.3, 0.7, 0.3],
@@ -288,7 +315,7 @@ export const NitrogenSimulator = () => {
                     filter="url(#nGlow)"
                   />
                   {/* عرق الورقة القمية */}
-                  <line x1="130" y1="80" x2="130" y2="25" stroke="#166534" strokeWidth="1.5" opacity="0.5" />
+                  <line x1="130" y1="80" x2="130" y2="25" stroke={C.leafDark} strokeWidth="1.5" opacity="0.5" />
                 </motion.g>
               </g>
 
@@ -298,21 +325,21 @@ export const NitrogenSimulator = () => {
                   <g>
                     <motion.circle
                       cx="100" cy="180" r="10"
-                      fill="#ef4444"
+                      fill={C.fruitRed}
                       initial={{ scale: 0 }}
                       animate={{ scale: [0, 1.2, 1] }}
                       transition={{ duration: 0.6, type: "spring" }}
                     />
                     <motion.circle
                       cx="160" cy="150" r="10"
-                      fill="#ef4444"
+                      fill={C.fruitRed}
                       initial={{ scale: 0 }}
                       animate={{ scale: [0, 1.2, 1] }}
                       transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
                     />
                     <motion.circle
                       cx="115" cy="110" r="8"
-                      fill="#f97316"
+                      fill={C.fruitOrange}
                       initial={{ scale: 0 }}
                       animate={{ scale: [0, 1.2, 1] }}
                       transition={{ duration: 0.6, delay: 0.4, type: "spring" }}
@@ -344,14 +371,14 @@ export const NitrogenSimulator = () => {
                         cx={95 + (i % 3) * 30}
                         cy={60 + Math.floor(i / 3) * 25}
                         r="4"
-                        fill="#1a1a1a"
+                        fill={C.pest}
                       />
                       <line
                         x1={95 + (i % 3) * 30 - 3}
                         y1={60 + Math.floor(i / 3) * 25}
                         x2={95 + (i % 3) * 30 - 6}
                         y2={60 + Math.floor(i / 3) * 25 - 4}
-                        stroke="#1a1a1a"
+                        stroke={C.pest}
                         strokeWidth="1"
                       />
                       <line
@@ -368,56 +395,56 @@ export const NitrogenSimulator = () => {
 
               {/* مؤشرات حية */}
               <g transform="translate(10, 250)">
-                <rect x="0" y="0" width="240" height="60" rx="8" fill="white" opacity="0.85" stroke="#e2e8f0" strokeWidth="1" />
+                <rect x="0" y="0" width="240" height="60" rx="8" fill={C.surface} opacity="0.85" stroke={C.border} strokeWidth="1" />
 
-                <text x="10" y="13" fontSize="5.5" fill="#64748b">N</text>
-                <rect x="10" y="16" width="60" height="5" rx="2.5" fill="#e2e8f0" />
+                <text x="10" y="13" fontSize="5.5" fill={C.textMuted}>N</text>
+                <rect x="10" y="16" width="60" height="5" rx="2.5" fill={C.grid} />
                 <motion.rect
                   x="10" y="16" height="5" rx="2.5"
-                  fill={status === "optimal" ? "#22c55e" : status.startsWith("defic") ? "#f59e0b" : "#3b82f6"}
+                  fill={status === "optimal" ? C.barGreen : status.startsWith("defic") ? C.barAmber : C.barBlue}
                   animate={{ width: `${(nLevel / 100) * 60}px` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
-                <text x="75" y="21" fontSize="5.5" fontFamily="monospace" fill="#1e293b">{nLevel.toFixed(0)}%</text>
+                <text x="75" y="21" fontSize="5.5" fontFamily="monospace" fill={C.text}>{nLevel.toFixed(0)}%</text>
 
-                <text x="100" y="13" fontSize="5.5" fill="#64748b">pH</text>
-                <rect x="100" y="16" width="50" height="5" rx="2.5" fill="#e2e8f0" />
+                <text x="100" y="13" fontSize="5.5" fill={C.textMuted}>pH</text>
+                <rect x="100" y="16" width="50" height="5" rx="2.5" fill={C.grid} />
                 <motion.rect
                   x="100" y="16" height="5" rx="2.5"
-                  fill={soilPH >= 6.5 && soilPH <= 7.5 ? "#22c55e" : soilPH >= 6.0 ? "#f59e0b" : "#ef4444"}
+                  fill={soilPH >= 6.5 && soilPH <= 7.5 ? C.barGreen : soilPH >= 6.0 ? C.barAmber : C.barRed}
                   animate={{ width: `${((soilPH - 5) / 3.5) * 50}px` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
-                <text x="155" y="21" fontSize="5.5" fontFamily="monospace" fill="#1e293b">{soilPH.toFixed(1)}</text>
+                <text x="155" y="21" fontSize="5.5" fontFamily="monospace" fill={C.text}>{soilPH.toFixed(1)}</text>
 
-                <text x="180" y="13" fontSize="5.5" fill="#64748b">غسيل</text>
-                <rect x="180" y="16" width="50" height="5" rx="2.5" fill="#e2e8f0" />
+                <text x="180" y="13" fontSize="5.5" fill={C.textMuted}>غسيل</text>
+                <rect x="180" y="16" width="50" height="5" rx="2.5" fill={C.grid} />
                 <motion.rect
                   x="180" y="16" height="5" rx="2.5"
-                  fill={isHighLeaching ? "#ef4444" : isMediumLeaching ? "#f59e0b" : "#22c55e"}
+                  fill={isHighLeaching ? C.barRed : isMediumLeaching ? C.barAmber : C.barGreen}
                   animate={{ width: `${(leachingRisk / 100) * 50}px` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
-                <text x="235" y="21" fontSize="5" fontFamily="monospace" fill="#1e293b">{leachingRisk.toFixed(0)}%</text>
+                <text x="235" y="21" fontSize="5" fontFamily="monospace" fill={C.text}>{leachingRisk.toFixed(0)}%</text>
 
-                <text x="10" y="38" fontSize="5.5" fill="#64748b">NH₄⁺</text>
-                <rect x="10" y="41" width="45" height="4" rx="2" fill="#e2e8f0" />
-                <motion.rect x="10" y="41" height="4" rx="2" fill="#16a34a"
+                <text x="10" y="38" fontSize="5.5" fill={C.textMuted}>NH₄⁺</text>
+                <rect x="10" y="41" width="45" height="4" rx="2" fill={C.grid} />
+                <motion.rect x="10" y="41" height="4" rx="2" fill={C.nh4}
                   animate={{ width: `${(nh4Level / 100) * 45}px` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
-                <text x="58" y="45" fontSize="5" fontFamily="monospace" fill="#1e293b">{nh4Level.toFixed(0)}</text>
+                <text x="58" y="45" fontSize="5" fontFamily="monospace" fill={C.text}>{nh4Level.toFixed(0)}</text>
 
-                <text x="90" y="38" fontSize="5.5" fill="#64748b">NO₃⁻</text>
-                <rect x="90" y="41" width="45" height="4" rx="2" fill="#e2e8f0" />
-                <motion.rect x="90" y="41" height="4" rx="2" fill="#3b82f6"
+                <text x="90" y="38" fontSize="5.5" fill={C.textMuted}>NO₃⁻</text>
+                <rect x="90" y="41" width="45" height="4" rx="2" fill={C.grid} />
+                <motion.rect x="90" y="41" height="4" rx="2" fill={C.no3}
                   animate={{ width: `${(no3Level / 100) * 45}px` }}
                   transition={{ type: "spring", stiffness: 60 }}
                 />
-                <text x="138" y="45" fontSize="5" fontFamily="monospace" fill="#1e293b">{no3Level.toFixed(0)}</text>
+                <text x="138" y="45" fontSize="5" fontFamily="monospace" fill={C.text}>{no3Level.toFixed(0)}</text>
 
-                <text x="170" y="38" fontSize="5.5" fill="#64748b">مطر</text>
-                <text x="230" y="45" fontSize="5.5" fontFamily="monospace" fill="#1e293b" fontWeight="bold">{rainIntensity.toFixed(0)}%</text>
+                <text x="170" y="38" fontSize="5.5" fill={C.textMuted}>مطر</text>
+                <text x="230" y="45" fontSize="5.5" fontFamily="monospace" fill={C.text} fontWeight="bold">{rainIntensity.toFixed(0)}%</text>
               </g>
             </svg>
           </div>
@@ -470,21 +497,21 @@ export const NitrogenSimulator = () => {
 
             {/* بطاقات أشكال النيتروجين */}
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-emerald-50 rounded-xl p-3 border border-emerald-200">
-                <div className="text-[10px] font-bold text-emerald-700 flex items-center gap-1">
+              <div className="bg-emerald-50 dark:bg-emerald-900/30 rounded-xl p-3 border border-emerald-200 dark:border-emerald-800">
+                <div className="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-1">
                   <Pill size={12} /> NH₄⁺ (أمونيوم)
                 </div>
-                <div className="text-xl font-black font-mono text-emerald-600">
+                <div className="text-xl font-black font-mono text-emerald-600 dark:text-emerald-400">
                   {(nh4Ratio * 100).toFixed(0)}%
                 </div>
-                <div className="text-[8px] text-emerald-500">
+                <div className="text-[8px] text-emerald-500 dark:text-emerald-400">
                   {nh4Ratio > 0.6
                     ? "يسود في التربة الحمضية"
                     : nh4Ratio > 0.3
                       ? "مختلط مع NO₃⁻"
                       : "قليل — يتحول لـ NO₃⁻"}
                 </div>
-                <div className="w-full h-1 bg-emerald-200 rounded-full mt-1 overflow-hidden">
+                <div className="w-full h-1 bg-emerald-200 dark:bg-emerald-800 rounded-full mt-1 overflow-hidden">
                   <motion.div
                     className="h-full bg-emerald-500 rounded-full"
                     animate={{ width: `${nh4Ratio * 100}%` }}
@@ -495,23 +522,23 @@ export const NitrogenSimulator = () => {
               <div
                 className={cn(
                   "rounded-xl p-3 border",
-                  isHighLeaching ? "bg-red-50 border-red-200" : "bg-blue-50 border-blue-200"
+                  isHighLeaching ? "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800" : "bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800"
                 )}
               >
-                <div className="text-[10px] font-bold text-blue-700 flex items-center gap-1">
+                <div className="text-[10px] font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1">
                   <Droplets size={12} /> NO₃⁻ (نترات)
                 </div>
-                <div className="text-xl font-black font-mono text-blue-600">
+                <div className="text-xl font-black font-mono text-blue-600 dark:text-blue-400">
                   {(no3Ratio * 100).toFixed(0)}%
                 </div>
-                <div className="text-[8px] text-blue-500">
+                <div className="text-[8px] text-blue-500 dark:text-blue-400">
                   {no3Ratio > 0.6
                     ? "يسود في التربة القاعدية — عالي الغسيل!"
                     : no3Ratio > 0.3
                       ? "مختلط مع NH₄⁺"
                       : "قليل — آمن من الغسيل"}
                 </div>
-                <div className="w-full h-1 bg-blue-200 rounded-full mt-1 overflow-hidden">
+                <div className="w-full h-1 bg-blue-200 dark:bg-blue-800 rounded-full mt-1 overflow-hidden">
                   <motion.div
                     className={cn("h-full rounded-full", isHighLeaching ? "bg-red-500" : "bg-blue-500")}
                     animate={{ width: `${no3Ratio * 100}%` }}
@@ -527,15 +554,15 @@ export const NitrogenSimulator = () => {
                 className={cn(
                   "rounded-lg p-2 border",
                   nh4Toxicity
-                    ? "bg-purple-50 border-purple-200"
-                    : "bg-emerald-50 border-emerald-200"
+                    ? "bg-purple-50 dark:bg-purple-900/30 border-purple-200 dark:border-purple-800"
+                    : "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-800"
                 )}
               >
-                <div className="text-[8px] font-bold text-slate-500">NH₄⁺</div>
+                <div className="text-[8px] font-bold text-slate-500 dark:text-slate-400">NH₄⁺</div>
                 <div
                   className={cn(
                     "text-base font-black font-mono",
-                    nh4Toxicity ? "text-purple-600" : "text-emerald-600"
+                    nh4Toxicity ? "text-purple-600 dark:text-purple-400" : "text-emerald-600 dark:text-emerald-400"
                   )}
                 >
                   {nh4Level.toFixed(0)}
@@ -545,15 +572,15 @@ export const NitrogenSimulator = () => {
                 className={cn(
                   "rounded-lg p-2 border",
                   isHighLeaching
-                    ? "bg-red-50 border-red-200"
-                    : "bg-blue-50 border-blue-200"
+                    ? "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800"
+                    : "bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800"
                 )}
               >
-                <div className="text-[8px] font-bold text-slate-500">NO₃⁻</div>
+                <div className="text-[8px] font-bold text-slate-500 dark:text-slate-400">NO₃⁻</div>
                 <div
                   className={cn(
                     "text-base font-black font-mono",
-                    isHighLeaching ? "text-red-600" : "text-blue-600"
+                    isHighLeaching ? "text-red-600 dark:text-red-400" : "text-blue-600 dark:text-blue-400"
                   )}
                 >
                   {no3Level.toFixed(0)}
@@ -563,21 +590,21 @@ export const NitrogenSimulator = () => {
                 className={cn(
                   "rounded-lg p-2 border",
                   isHighLeaching
-                    ? "bg-red-50 border-red-200"
+                    ? "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800"
                     : isMediumLeaching
-                      ? "bg-amber-50 border-amber-200"
-                      : "bg-emerald-50 border-emerald-200"
+                      ? "bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800"
+                      : "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-800"
                 )}
               >
-                <div className="text-[8px] font-bold text-slate-500">خطر غسيل</div>
+                <div className="text-[8px] font-bold text-slate-500 dark:text-slate-400">خطر غسيل</div>
                 <div
                   className={cn(
                     "text-base font-black font-mono",
                     isHighLeaching
-                      ? "text-red-600"
+                      ? "text-red-600 dark:text-red-400"
                       : isMediumLeaching
-                        ? "text-amber-600"
-                        : "text-emerald-600"
+                        ? "text-amber-600 dark:text-amber-400"
+                        : "text-emerald-600 dark:text-emerald-400"
                   )}
                 >
                   {leachingRisk.toFixed(0)}%
@@ -641,19 +668,19 @@ export const NitrogenSimulator = () => {
 
             {/* تلميحات حسب الحالة */}
             {status === "optimal" && nLevel > 45 && (
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-2 text-center text-xs text-emerald-700 font-bold">
+              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50 border border-emerald-200 dark:border-emerald-800 rounded-xl p-2 text-center text-xs text-emerald-700 dark:text-emerald-300 font-bold">
                 💡 النيتروجين مسؤول عن اللون الأخضر (الكلوروفيل). في النطاق
                 المثالي (40-70%)، النبات يصنع طعامه بكفاءة ويثمر.
               </div>
             )}
             {status === "excess" && (
-              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-2 text-center text-xs text-blue-700 font-bold">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50 border border-blue-200 dark:border-blue-800 rounded-xl p-2 text-center text-xs text-blue-700 dark:text-blue-300 font-bold">
                 💡 الإفراط في النيتروجين يمنع الإثمار — كل الطاقة تذهب للأوراق
                 على حساب الثمار. هذه مشكلة شائعة عند مزارعي الطماطم!
               </div>
             )}
             {soilPH < 6.0 && (
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-2 text-center text-xs text-amber-700 font-bold">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50 border border-amber-200 dark:border-amber-800 rounded-xl p-2 text-center text-xs text-amber-700 dark:text-amber-300 font-bold">
                 💡 التربة الحمضية (pH {soilPH.toFixed(1)}) تثبت NH₄⁺ ولكنها
                 تمنع تحوله إلى NO₃⁻. أضف جيراً لرفع pH إلى 6.5-7.0
                 لتحسين توفر النيتروجين.

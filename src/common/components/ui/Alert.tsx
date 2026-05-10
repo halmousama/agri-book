@@ -16,10 +16,10 @@ const icons = {
 };
 
 const styles = {
-    success: "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 shadow-[0_0_15px_rgba(5,150,105,0.1)]",
-    danger: "bg-rose-500/10 border-rose-500/30 text-rose-800 shadow-[0_0_15px_rgba(225,29,72,0.1)]",
-    warning: "bg-amber-500/10 border-amber-500/30 text-amber-900 shadow-[0_0_15px_rgba(217,119,6,0.1)]",
-    info: "bg-blue-500/10 border-blue-500/30 text-blue-900 shadow-[0_0_15px_rgba(37,99,235,0.1)]",
+    success: "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300 shadow-[0_0_15px_rgba(5,150,105,0.1)]",
+    danger: "bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-300 shadow-[0_0_15px_rgba(225,29,72,0.1)]",
+    warning: "bg-amber-500/10 border-amber-500/30 text-amber-900 dark:text-amber-300 shadow-[0_0_15px_rgba(217,119,6,0.1)]",
+    info: "bg-blue-500/10 border-blue-500/30 text-blue-900 dark:text-blue-300 shadow-[0_0_15px_rgba(37,99,235,0.1)]",
 };
 
 export const Alert = ({ type, title, children }: AlertProps) => {
