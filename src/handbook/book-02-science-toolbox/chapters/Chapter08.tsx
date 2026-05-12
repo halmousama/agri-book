@@ -7,7 +7,7 @@ export default function Chapter08() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
         <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
-            <Link to="/book-02-science-toolbox" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
+            <Link to="/agri/book-02-science-toolbox" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 8 من 15</span>
@@ -51,12 +51,12 @@ export default function Chapter08() {
         </div>
 
         <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-            <Link to="/book-02-science-toolbox/chapter07">
+            <Link to="/agri/book-02-science-toolbox/chapter07">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> السابق
                 </Button>
             </Link>
-            <Link to="/book-02-science-toolbox/chapter09">
+            <Link to="/agri/book-02-science-toolbox/chapter09">
                 <Button className="flex items-center gap-2">
                     التالي: حفظ الطاقة <ArrowLeft size={18} />
                 </Button>

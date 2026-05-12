@@ -7,7 +7,7 @@ export default function Chapter07() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
-        <Link to="/book-04-hardware-ai" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
+        <Link to="/agri/book-04-hardware-ai" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 7 من 8</span>
@@ -124,12 +124,12 @@ export default function Chapter07() {
       </div>
 
       <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-        <Link to="/book-04-hardware-ai/chapter06">
+        <Link to="/agri/book-04-hardware-ai/chapter06">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: روبوتات السرب
           </Button>
         </Link>
-        <Link to="/book-04-hardware-ai/chapter08">
+        <Link to="/agri/book-04-hardware-ai/chapter08">
           <Button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700">
             التالي: المستشعرات الصوتية للآفات <ArrowLeft size={18} />
           </Button>

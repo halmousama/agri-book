@@ -111,7 +111,7 @@ export default function Book05Intro() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-4 mt-16">
-        <Link to="/book-05-ecosystems-export/chapter01">
+        <Link to="/agri/book-05-ecosystems-export/chapter01">
           <Button className="text-lg px-8 py-4 bg-teal-600 hover:bg-teal-700 shadow-xl shadow-teal-200/50 flex items-center gap-3">
             <Globe size={24} />
             ابدأ رحلة الأنظمة المتكاملة (الفصل الأول)

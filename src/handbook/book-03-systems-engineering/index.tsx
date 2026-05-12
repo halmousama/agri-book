@@ -184,13 +184,13 @@ export default function Book03Intro() {
 
       {/* CTA Buttons */}
       <div className="flex flex-col md:flex-row justify-center gap-4 mt-16">
-        <Link to="/book-03-systems-engineering/chapter01">
+        <Link to="/agri/book-03-systems-engineering/chapter01">
           <Button className="text-lg px-8 py-4 bg-amber-600 hover:bg-amber-700 shadow-xl shadow-amber-200/50 flex items-center gap-3">
             <Tractor size={24} />
             ابدأ هندسة النظام (الفصل الأول)
           </Button>
         </Link>
-        <Link to="/book-04-hardware-ai">
+        <Link to="/agri/book-04-hardware-ai">
           <Button className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700 shadow-xl shadow-purple-200/50 flex items-center gap-3">
             <Cpu size={24} />
             الكتاب الرابع: هندسة الآلات والذكاء الاصطناعي

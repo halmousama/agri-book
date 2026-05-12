@@ -114,13 +114,13 @@ export default function Book04Intro() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-4 mt-16">
-        <Link to="/book-04-hardware-ai/chapter01">
+        <Link to="/agri/book-04-hardware-ai/chapter01">
           <Button className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700 shadow-xl shadow-purple-200/50 flex items-center gap-3">
             <Satellite size={24} />
             ابدأ ثورة الآلات (الفصل الأول)
           </Button>
         </Link>
-        <Link to="/book-05-ecosystems-export">
+        <Link to="/agri/book-05-ecosystems-export">
           <Button className="text-lg px-8 py-4 bg-teal-600 hover:bg-teal-700 shadow-xl shadow-teal-200/50 flex items-center gap-3">
             <Globe size={24} />
             الكتاب الخامس: الأنظمة المتكاملة وهندسة التصدير

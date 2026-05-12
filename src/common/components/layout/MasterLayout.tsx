@@ -14,8 +14,9 @@ import {
   Home,
   Activity,
   CheckCircle2,
+  Ship,
 } from "lucide-react";
-import { BOOKS } from "../../constants/books";
+import { LIBRARY } from "../../constants/books";
 import { cn } from "../../utils/cn";
 import { useProgress } from "../../contexts/ProgressContext";
 import { ThemeToggle } from "../ui/ThemeToggle";
@@ -26,6 +27,7 @@ const PART_ICONS: Record<string, React.ReactNode> = {
   "book-03-systems-engineering": <Tractor size={20} className="text-amber-600" />,
   "book-04-hardware-ai": <Cpu size={20} className="text-purple-600" />,
   "book-05-ecosystems-export": <Globe size={20} className="text-teal-600" />,
+  "book-sea": <Ship size={20} className="text-blue-600" />,
 };
 
 const PART_COLORS: Record<string, string> = {
@@ -34,6 +36,7 @@ const PART_COLORS: Record<string, string> = {
   "book-03-systems-engineering": "amber",
   "book-04-hardware-ai": "purple",
   "book-05-ecosystems-export": "teal",
+  "book-sea": "blue",
 };
 
 const COLOR_CLASSES: Record<string, Record<string, string>> = {
@@ -44,27 +47,31 @@ const COLOR_CLASSES: Record<string, Record<string, string>> = {
   teal: { bg: "bg-teal-50 dark:bg-teal-900/30", text: "text-teal-700 dark:text-teal-300", border: "border-teal-200 dark:border-teal-800", ring: "ring-teal-500", bar: "bg-teal-600", activeBg: "bg-teal-50 dark:bg-teal-900/40", activeText: "text-teal-700 dark:text-teal-300", activeBorder: "border-teal-100 dark:border-teal-800" },
 };
 
+const LIBRARY_COLORS: Record<string, { gradient: string; iconGrad: string; iconColor: string; logoText: string; homeHover: string }> = {
+  agri: { gradient: "from-emerald-100 to-amber-100", iconGrad: "from-emerald-100 to-amber-100", iconColor: "text-emerald-700", logoText: "hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 dark:hover:text-emerald-400", homeHover: "dark:bg-emerald-600" },
+  sea: { gradient: "from-blue-100 to-cyan-100", iconGrad: "from-blue-100 to-cyan-100", iconColor: "text-blue-700", logoText: "hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/30 dark:hover:text-blue-400", homeHover: "dark:bg-blue-600" },
+};
+
 export const MasterLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [openParts, setOpenParts] = useState<Record<string, boolean>>(() => ({
-    "book-01-nature-logic": true,
-    "book-02-science-toolbox": false,
-    "book-03-systems-engineering": false,
-    "book-04-hardware-ai": false,
-    "book-05-ecosystems-export": false,
-  }));
+  const [openParts, setOpenParts] = useState<Record<string, boolean>>({});
   const location = useLocation();
   const mainRef = useRef<HTMLElement>(null);
   const { markVisited, isCompleted, lastVisited } = useProgress();
 
   const currentPath = location.pathname;
-  const currentBook = Object.values(BOOKS).find((b) =>
-    currentPath.includes(b.id),
-  );
+
+  const libraryEntry = LIBRARY.find(lib => currentPath.startsWith(lib.path));
+  const libraryPrefix = libraryEntry?.id ?? '';
+  const availableBooks = libraryEntry ? Object.values(libraryEntry.books) : [];
+  const libColors = LIBRARY_COLORS[libraryEntry?.id ?? 'agri'] ?? LIBRARY_COLORS.agri;
+
+  const currentBook = libraryEntry
+    ? Object.values(libraryEntry.books).find((b) => currentPath.includes(b.id))
+    : null;
   const currentChapter = currentBook
     ? currentBook.chapters.find((c) => currentPath.includes(c.path))
     : null;
-  const isHome = currentPath === "/";
 
   useLayoutEffect(() => {
     const main = mainRef.current;
@@ -121,7 +128,6 @@ export const MasterLayout = () => {
 
   return (
     <div className="min-h-screen bg-surface-50 dark:bg-slate-950 font-cairo flex isolate overflow-hidden">
-      {/* Overlay for mobile */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 z-30 bg-black/40 backdrop-blur-sm transition-opacity lg:hidden"
@@ -129,55 +135,53 @@ export const MasterLayout = () => {
         />
       )}
 
-      {/* ===== Unified Sidebar ===== */}
+      {/* ===== Sidebar ===== */}
       <aside
         className={cn(
           "fixed inset-y-0 right-0 z-40 flex w-72 flex-col bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-xl transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:shadow-none",
           !isSidebarOpen && "translate-x-full",
         )}
       >
-        {/* Header */}
+        {/* Sidebar Header */}
         <div className="flex items-center gap-3 px-6 h-16 border-b border-slate-100 dark:border-slate-800 shrink-0">
-          <div className="p-2 bg-gradient-to-br from-emerald-100 to-amber-100 rounded-lg">
-            <BookOpen size={20} className="text-emerald-700" />
+          <div className={`p-2 bg-gradient-to-br ${libColors.iconGrad} rounded-lg`}>
+            <BookOpen size={20} className={libColors.iconColor} />
           </div>
           <div>
-            <h2 className="font-bold text-slate-800 dark:text-slate-100 text-sm">الدليل الشامل</h2>
-            <span className="text-xs text-slate-500 dark:text-slate-400">المهندس الفلاحي</span>
+            <h2 className="font-bold text-slate-800 dark:text-slate-100 text-sm">
+              {libraryEntry?.title ?? 'المكتبة'}
+            </h2>
+            <span className="text-xs text-slate-500 dark:text-slate-400">
+              {libraryEntry?.subtitle ?? ''}
+            </span>
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 custom-scrollbar">
-          {/* Home link */}
+          {/* Back to Library */}
           <Link
             to="/"
             onClick={onSidebarLinkClick}
-            className={cn(
-              "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors mb-4",
-              isHome
-                ? "bg-slate-900 text-white dark:bg-emerald-600 dark:text-white"
-                : "text-slate-600 dark:text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 dark:hover:text-emerald-400",
-            )}
+            className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors mb-4 text-slate-600 dark:text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 dark:hover:text-emerald-400"
           >
-            <Home size={18} /> الرئيسية
+            <Home size={18} /> العودة إلى المكتبة
           </Link>
 
-          {/* 3 Parts with accordion */}
+          {/* Books accordion */}
           <nav className="space-y-4">
-            {Object.values(BOOKS).map((book) => {
+            {availableBooks.map((book) => {
               const isActive = currentBook?.id === book.id;
               const isOpen = openParts[book.id] ?? false;
-              const bookColor = PART_COLORS[book.id] ?? "emerald";
+              const bookColor = PART_COLORS[book.id] ?? color;
               const bookAccent = COLOR_CLASSES[bookColor] ?? COLOR_CLASSES.emerald;
 
               return (
                 <div key={book.id} className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
-                  {/* Part Header Button */}
                   <button
                     onClick={() => togglePart(book.id)}
                     className={cn(
                       "w-full flex items-center gap-3 px-3 py-3 text-sm font-bold transition-all",
-                      isActive && !isHome
+                      isActive
                         ? cn(bookAccent.activeBg, bookAccent.activeText, bookAccent.activeBorder)
                         : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800",
                     )}
@@ -193,7 +197,6 @@ export const MasterLayout = () => {
                     />
                   </button>
 
-                  {/* Chapters (collapsible) */}
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
@@ -205,13 +208,12 @@ export const MasterLayout = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-3 pb-2 space-y-0.5">
-                          {/* Intro link */}
                           <Link
-                            to={`/${book.id}`}
+                            to={`/${libraryPrefix}/${book.id}`}
                             onClick={onSidebarLinkClick}
                             className={cn(
                               "flex items-center gap-2 px-3 py-2 rounded-lg text-xs transition-all",
-                              currentPath === `/${book.id}`
+                              currentPath === `/${libraryPrefix}/${book.id}`
                                 ? cn(bookAccent.activeBg, bookAccent.activeText, "font-bold border", bookAccent.activeBorder)
                                 : "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200",
                             )}
@@ -219,64 +221,24 @@ export const MasterLayout = () => {
                             <BookOpen size={14} /> مقدمة {book.title}
                           </Link>
 
-                          {/* Chapters */}
                           {(book.sections ?? []).length > 0
-                                ? // With section grouping
-                                  book.sections!.map((section, sIdx) => (
-                                    <div key={sIdx} className="mt-2">
-                                      <div className="px-3 py-1 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                        {section.title}
-                                      </div>
+                            ? book.sections!.map((section, sIdx) => (
+                                <div key={sIdx} className="mt-2">
+                                  <div className="px-3 py-1 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                                    {section.title}
+                                  </div>
                                   {section.chapters.map((ch) => {
+                                    const chLinkPath = `/${libraryPrefix}/${book.id}/${ch.id}`;
                                     const isChActive = currentPath.includes(ch.path);
                                     const chCompleted = isCompleted(book.id, ch.id);
                                     const isLastVisited = lastVisited?.bookId === book.id && lastVisited?.chapterId === ch.id;
                                     return (
                                       <Link
                                         key={ch.id}
-                                to={ch.path}
-                                onClick={onSidebarLinkClick}
-                                className={cn(
-                                  "flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-all",
-                                  isChActive
-                                    ? cn(bookAccent.activeBg, bookAccent.activeText, "font-bold border shadow-sm", bookAccent.activeBorder)
-                                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200",
-                                )}
-                              >
-                                <div className="flex items-center gap-1.5 min-w-0">
-                                  {chCompleted && !isChActive && (
-                                    <CheckCircle2 size={12} className="shrink-0 text-emerald-400" />
-                                  )}
-                                  <span className="truncate">{ch.title}</span>
-                                  {isLastVisited && !isChActive && (
-                                    <span className="shrink-0 text-[9px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded-full">
-                                      تابع
-                                    </span>
-                                  )}
-                                        </div>
-                                        <div className="flex items-center gap-1">
-                                          {isChActive && <ChevronLeft size={14} className={bookAccent.activeText} />}
-                                          {chCompleted && isChActive && (
-                                            <CheckCircle2 size={12} className={bookAccent.activeText} />
-                                          )}
-                                        </div>
-                                      </Link>
-                                    );
-                                  })}
-                                </div>
-                              ))
-                            : // Flat list
-                              book.chapters.map((ch) => {
-                                const isChActive = currentPath.includes(ch.path);
-                                const chCompleted = isCompleted(book.id, ch.id);
-                                const isLastVisited = lastVisited?.bookId === book.id && lastVisited?.chapterId === ch.id;
-                                return (
-                                      <Link
-                                        key={ch.id}
-                                        to={ch.path}
+                                        to={chLinkPath}
                                         onClick={onSidebarLinkClick}
                                         className={cn(
-                                          "flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-all mt-0.5",
+                                          "flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-all",
                                           isChActive
                                             ? cn(bookAccent.activeBg, bookAccent.activeText, "font-bold border shadow-sm", bookAccent.activeBorder)
                                             : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200",
@@ -300,6 +262,45 @@ export const MasterLayout = () => {
                                           )}
                                         </div>
                                       </Link>
+                                    );
+                                  })}
+                                </div>
+                              ))
+                            : book.chapters.map((ch) => {
+                                const chLinkPath = `/${libraryPrefix}/${book.id}/${ch.id}`;
+                                const isChActive = currentPath.includes(ch.path);
+                                const chCompleted = isCompleted(book.id, ch.id);
+                                const isLastVisited = lastVisited?.bookId === book.id && lastVisited?.chapterId === ch.id;
+                                return (
+                                  <Link
+                                    key={ch.id}
+                                    to={chLinkPath}
+                                    onClick={onSidebarLinkClick}
+                                    className={cn(
+                                      "flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-all mt-0.5",
+                                      isChActive
+                                        ? cn(bookAccent.activeBg, bookAccent.activeText, "font-bold border shadow-sm", bookAccent.activeBorder)
+                                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200",
+                                    )}
+                                  >
+                                    <div className="flex items-center gap-1.5 min-w-0">
+                                      {chCompleted && !isChActive && (
+                                        <CheckCircle2 size={12} className="shrink-0 text-emerald-400" />
+                                      )}
+                                      <span className="truncate">{ch.title}</span>
+                                      {isLastVisited && !isChActive && (
+                                        <span className="shrink-0 text-[9px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded-full">
+                                          تابع
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                      {isChActive && <ChevronLeft size={14} className={bookAccent.activeText} />}
+                                      {chCompleted && isChActive && (
+                                        <CheckCircle2 size={12} className={bookAccent.activeText} />
+                                      )}
+                                    </div>
+                                  </Link>
                                 );
                               })}
                         </div>
@@ -315,7 +316,7 @@ export const MasterLayout = () => {
 
       {/* ===== Main Content Area ===== */}
       <div className="flex-1 flex flex-col min-w-0 bg-white dark:bg-slate-950 shadow-xl isolate">
-        {/* Unified Navbar */}
+        {/* Navbar */}
         <header className="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
           <div className="flex items-center justify-between px-4 h-16 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4">
@@ -329,47 +330,44 @@ export const MasterLayout = () => {
               </button>
 
               {/* Breadcrumbs */}
-              {!isHome && (
-                <nav className="hidden sm:flex" aria-label="Breadcrumb">
-                  <ol role="list" className="flex items-center gap-2">
+              <nav className="hidden sm:flex" aria-label="Breadcrumb">
+                <ol role="list" className="flex items-center gap-2">
+                  <li>
+                    <Link to="/" className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+                      المكتبة
+                    </Link>
+                  </li>
+                  {currentBook && (
                     <li>
-                      <Link to="/" className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
-                        الدليل الشامل
-                      </Link>
+                      <div className="flex items-center">
+                        <ChevronLeft className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
+                        <Link
+                          to={`/${libraryPrefix}/${currentBook.id}`}
+                          className="mr-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                        >
+                          {currentBook.title}
+                        </Link>
+                      </div>
                     </li>
-                    {currentBook && (
-                      <li>
-                        <div className="flex items-center">
-                          <ChevronLeft className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
-                          <Link
-                            to={`/${currentBook.id}`}
-                            className="mr-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                          >
-                            {currentBook.title}
-                          </Link>
-                        </div>
-                      </li>
-                    )}
-                    {currentChapter && (
-                      <li>
-                        <div className="flex items-center">
-                          <ChevronLeft className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
-                          <span
-                            className="mr-2 text-sm font-bold text-slate-900 dark:text-slate-100 truncate max-w-[200px]"
-                            aria-current="page"
-                          >
-                            {currentChapter.title}
-                          </span>
-                        </div>
-                      </li>
-                    )}
-                  </ol>
-                </nav>
-              )}
+                  )}
+                  {currentChapter && (
+                    <li>
+                      <div className="flex items-center">
+                        <ChevronLeft className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
+                        <span
+                          className="mr-2 text-sm font-bold text-slate-900 dark:text-slate-100 truncate max-w-[200px]"
+                          aria-current="page"
+                        >
+                          {currentChapter.title}
+                        </span>
+                      </div>
+                    </li>
+                  )}
+                </ol>
+              </nav>
             </div>
 
             <div className="flex items-center gap-3">
-              {/* Progress indicator */}
               {currentChapter && (
                 <div className={cn("flex items-center gap-3 px-3 py-1.5 rounded-full border", accent.bg, accent.border)}>
                   <Activity size={16} className={cn("hidden sm:block", accent.text)} />

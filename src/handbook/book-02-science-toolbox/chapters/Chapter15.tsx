@@ -8,7 +8,7 @@ export default function Chapter15() {
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
       <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
         <Link
-          to="/book-02-science-toolbox"
+          to="/agri/book-02-science-toolbox"
           className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1"
         >
           <ArrowRight size={16} /> مقدمة الكتاب
@@ -96,7 +96,7 @@ export default function Chapter15() {
                 العودة للدليل الشامل
               </Button>
             </Link>
-            <Link to="/book-03-systems-engineering">
+            <Link to="/agri/book-03-systems-engineering">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white border-0 w-full md:w-auto flex items-center gap-2 justify-center">
                 <BookOpen size={18} />
                 الباب الثالث: هندسة الأنظمة
@@ -107,12 +107,12 @@ export default function Chapter15() {
 
       {/* Navigation Bottom */}
       <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-        <Link to="/book-02-science-toolbox/chapter14">
+        <Link to="/agri/book-02-science-toolbox/chapter14">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> الفصل السابق: وصفة الحياة
           </Button>
         </Link>
-        <Link to="/book-03-systems-engineering">
+        <Link to="/agri/book-03-systems-engineering">
           <Button className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700">
             الباب الثالث: هندسة الأنظمة <ArrowLeft size={18} />
           </Button>

@@ -159,13 +159,13 @@ export default function Book01Intro() {
 
       {/* CTA Buttons */}
       <div className="flex flex-col md:flex-row justify-center gap-4 mt-16">
-        <Link to="/book-01-nature-logic/chapter01">
+        <Link to="/agri/book-01-nature-logic/chapter01">
           <Button className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 shadow-xl shadow-emerald-200/50 flex items-center gap-3 w-full md:w-auto">
             <Sprout size={24} />
             بسم الله نبدأ الفصل الأول
           </Button>
         </Link>
-        <Link to="/book-02-science-toolbox">
+        <Link to="/agri/book-02-science-toolbox">
           <Button variant="outline" className="text-lg px-8 py-4 flex items-center gap-3 w-full md:w-auto border-blue-500 text-blue-600 hover:bg-blue-50">
             <BookOpen size={24} />
             اذهب للكتاب الثاني: العدة العلمية

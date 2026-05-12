@@ -8,7 +8,7 @@ export default function Chapter03() {
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo overflow-x-hidden">
       {/* Navigation Top */}
       <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
-        <Link to="/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
+        <Link to="/agri/book-05-ecosystems-export" className="hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 3 من 8</span>
@@ -117,12 +117,12 @@ export default function Chapter03() {
 
       {/* Navigation Bottom */}
       <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-        <Link to="/book-05-ecosystems-export/chapter02">
+        <Link to="/agri/book-05-ecosystems-export/chapter02">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: الزراعة التجديدية
           </Button>
         </Link>
-        <Link to="/book-05-ecosystems-export/chapter04">
+        <Link to="/agri/book-05-ecosystems-export/chapter04">
           <Button className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700">
             التالي: القيمة المضافة <ArrowLeft size={18} />
           </Button>

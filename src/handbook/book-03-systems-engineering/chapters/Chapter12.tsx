@@ -7,7 +7,7 @@ export default function Chapter12() {
   return (
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
       <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
-        <Link to="/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
+        <Link to="/agri/book-03-systems-engineering" className="hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
         <span>الفصل 12 من 12 — الفصل الأخير 🎉</span>
@@ -82,7 +82,7 @@ export default function Chapter12() {
                 العودة للدليل الشامل
               </Button>
             </Link>
-            <Link to="/book-04-hardware-ai">
+            <Link to="/agri/book-04-hardware-ai">
               <Button className="bg-purple-600 hover:bg-purple-700 text-white border-0 w-full md:w-auto flex items-center gap-2 justify-center">
                 <BookOpen size={18} />
                 الباب الرابع: هندسة الآلات والذكاء الاصطناعي
@@ -93,12 +93,12 @@ export default function Chapter12() {
       </div>
 
       <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-        <Link to="/book-03-systems-engineering/chapter11">
+        <Link to="/agri/book-03-systems-engineering/chapter11">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> السابق: نقطة التعادل
           </Button>
         </Link>
-        <Link to="/book-04-hardware-ai">
+        <Link to="/agri/book-04-hardware-ai">
           <Button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700">
             الباب الرابع: هندسة الآلات <ArrowLeft size={18} />
           </Button>

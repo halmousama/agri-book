@@ -8,7 +8,7 @@ export default function Chapter12() {
     <div className="max-w-4xl mx-auto p-6 min-h-screen pb-32 font-cairo">
         {/* Navigation */}
         <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
-            <Link to="/book-01-nature-logic" className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1">
+            <Link to="/agri/book-01-nature-logic" className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1">
                 <ArrowRight size={16} /> مقدمة الكتاب
             </Link>
             <span>الفصل 12 من 12 (مسك الختام)</span>
@@ -94,7 +94,7 @@ export default function Chapter12() {
                             العودة للدليل الشامل
                         </Button>
                     </Link>
-                    <Link to="/book-02-science-toolbox">
+                    <Link to="/agri/book-02-science-toolbox">
                         <Button className="bg-blue-600 hover:bg-blue-700 text-white border-0 w-full md:w-auto flex items-center gap-2 justify-center">
                             <BookOpen size={18} />
                             الباب الثاني: العدة العلمية
@@ -105,12 +105,12 @@ export default function Chapter12() {
 
         {/* Navigation Bottom */}
         <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-            <Link to="/book-01-nature-logic/chapter11">
+            <Link to="/agri/book-01-nature-logic/chapter11">
                 <Button variant="outline" className="flex items-center gap-2">
                     <ArrowRight size={18} /> الفصل السابق: هندسة الشكل
                 </Button>
             </Link>
-            <Link to="/book-02-science-toolbox">
+            <Link to="/agri/book-02-science-toolbox">
                 <Button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
                     الباب الثاني: العدة العلمية <ArrowLeft size={18} />
                 </Button>

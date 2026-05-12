@@ -9,7 +9,7 @@ export default function Chapter04() {
       {/* Navigation */}
       <div className="flex justify-between items-center mb-8 text-sm text-slate-500 dark:text-slate-400">
         <Link
-          to="/book-01-nature-logic"
+          to="/agri/book-01-nature-logic"
           className="hover:text-green-600 dark:hover:text-green-400 flex items-center gap-1"
         >
           <ArrowRight size={16} /> مقدمة الكتاب
@@ -85,13 +85,13 @@ export default function Chapter04() {
 
       {/* Navigation Bottom */}
       <div className="mt-16 flex justify-between items-center border-t border-slate-100 dark:border-slate-700 pt-8">
-        <Link to="/book-01-nature-logic/chapter03">
+        <Link to="/agri/book-01-nature-logic/chapter03">
           <Button variant="outline" className="flex items-center gap-2">
             <ArrowRight size={18} /> الفصل السابق: مضخة النتح
           </Button>
         </Link>
 
-        <Link to="/book-01-nature-logic/chapter05">
+        <Link to="/agri/book-01-nature-logic/chapter05">
           <Button className="flex items-center gap-2">
             التالي: محرك النمو (النيتروجين) <ArrowLeft size={18} />
           </Button>

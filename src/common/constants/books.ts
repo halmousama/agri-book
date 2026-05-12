@@ -1,4 +1,4 @@
-import type { Book } from "../types/book";
+import type { Book, LibraryEntry } from "../types/book";
 
 const book03Chapters = [
     { id: "chapter01", title: "الساعة البيولوجية (ساعات البرودة)", path: "/book-03-systems-engineering/chapter01" },
@@ -82,7 +82,6 @@ export const BOOKS: Record<string, Book> = {
             },
         ],
         chapters: [
-            // flat list for easy navigation
             { id: "chapter01", title: "المكعبات الصغيرة (الذرة)", path: "/book-02-science-toolbox/chapter01" },
             { id: "chapter02", title: "الشحنات الخفية (الأيون)", path: "/book-02-science-toolbox/chapter02" },
             { id: "chapter03", title: "عصير الطبيعة (المحاليل)", path: "/book-02-science-toolbox/chapter03" },
@@ -171,3 +170,39 @@ export const BOOKS: Record<string, Book> = {
         ],
     },
 };
+
+export const SEA_BOOKS: Record<string, Book> = {
+    "book-sea": {
+        id: "book-sea",
+        title: "دليل الريّاس وعلوم البحر",
+        path: "/sea",
+        chapters: [
+            { id: "chapter01", title: "قراءة البحر والتضاريس (Bathymetry)", path: "/book-sea/chapter01" },
+            { id: "chapter02", title: "علم التوقيت (Solunar & Tides)", path: "/book-sea/chapter02" },
+            { id: "chapter03", title: "الطقس ومزاج السمكة (Weather)", path: "/book-sea/chapter03" },
+            { id: "chapter04", title: "التجهيزات والتكتيك (Tactics & Gear)", path: "/book-sea/chapter04" },
+            { id: "chapter05", title: "الملاحق (Dictionary, Fish Guide, Knots)", path: "/book-sea/chapter05" },
+        ],
+    },
+};
+
+export const LIBRARY: LibraryEntry[] = [
+    {
+        id: "agri",
+        title: "الدليل الشامل للمهندس الفلاحي",
+        subtitle: "AgriBooks",
+        description: "منصة تعليمية تفاعلية تدمج علم الأحياء بهندسة الأنظمة — من الخلية إلى الحصاد، ومن الكيمياء إلى الاقتصاد.",
+        path: "/agri",
+        icon: "Sprout",
+        books: BOOKS,
+    },
+    {
+        id: "sea",
+        title: "دليل الريّاس وعلوم البحر",
+        subtitle: "SeaMaster",
+        description: "دليلك المتكامل لفهم البحر وعلوم الصيد — من قراءة المد والجزر إلى ربط العقد البحرية.",
+        path: "/sea",
+        icon: "Ship",
+        books: SEA_BOOKS,
+    },
+];
