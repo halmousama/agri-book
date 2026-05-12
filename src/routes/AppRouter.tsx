@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from '../common/components/ScrollToTop';
 import App from '../App';
 import { MasterLayout } from '../common/components/layout/MasterLayout';
 import { BOOKS, SEA_BOOKS } from '../common/constants/books';
@@ -29,7 +30,9 @@ export const AppRouter = () => {
   const location = useLocation();
 
   return (
-    <Suspense fallback={
+    <>
+      <ScrollToTop />
+      <Suspense fallback={
       <div className="flex h-screen items-center justify-center font-cairo">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin"></div>
@@ -113,5 +116,6 @@ export const AppRouter = () => {
         </Routes>
       </AnimatePresence>
     </Suspense>
+    </>
   );
 };

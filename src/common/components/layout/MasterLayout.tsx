@@ -390,7 +390,7 @@ export const MasterLayout = () => {
         </header>
 
         {/* Page Content */}
-        <main ref={mainRef} className="flex-1 relative overflow-y-auto custom-scrollbar bg-surface-50 dark:bg-slate-950">
+        <main id="main-scroll-container" ref={mainRef} className="flex-1 relative overflow-y-auto custom-scrollbar bg-surface-50 dark:bg-slate-950">
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
