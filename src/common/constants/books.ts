@@ -182,6 +182,28 @@ export const SEA_BOOKS: Record<string, Book> = {
             { id: "chapter03", title: "الطقس ومزاج السمكة (Weather)", path: "/book-sea/chapter03" },
             { id: "chapter04", title: "التجهيزات والتكتيك (Tactics & Gear)", path: "/book-sea/chapter04" },
             { id: "chapter05", title: "الملاحق (Dictionary, Fish Guide, Knots)", path: "/book-sea/chapter05" },
+            { id: "chapter06", title: "الدليل المرجعي الشامل (النص الأصلي)", path: "/book-sea/chapter06" },
+        ],
+    },
+};
+
+export const FARM_BOOKS: Record<string, Book> = {
+    "book-03-living-farm": {
+        id: "book-03-living-farm",
+        title: "المزرعة الحية - نظام بيئي لا ينام",
+        path: "/book-03-living-farm",
+        chapters: [
+            { id: "chapter01", title: "كيف تعيش هذه المزرعة؟", path: "/book-03-living-farm/chapter01" },
+            { id: "chapter02", title: "دليل الإمكان — هذه المزرعة قيد التشغيل بالفعل", path: "/book-03-living-farm/chapter02" },
+            { id: "chapter03", title: "من الموت إلى الحياة — رحلة تحويل الرمال إلى تربة", path: "/book-03-living-farm/chapter03" },
+            { id: "chapter04", title: "قلب المزرعة النابض — الشمس، الماء، والطاقة", path: "/book-03-living-farm/chapter04" },
+            { id: "chapter05", title: "سكان المزرعة — كل مخلوق بوظيفة", path: "/book-03-living-farm/chapter05" },
+            { id: "chapter06", title: "النظام النباتي — من السعف إلى الطحالب", path: "/book-03-living-farm/chapter06" },
+            { id: "chapter07", title: "باب السيمفونيات — حين تتحول النوتات إلى ألحان", path: "/book-03-living-farm/chapter07" },
+            { id: "chapter08", title: "النظام الصحي — حين تكون المزرعة طبيبة نفسها", path: "/book-03-living-farm/chapter08" },
+            { id: "chapter09", title: "العقل الرقمي — الأعصاب، الذاكرة، والدماغ", path: "/book-03-living-farm/chapter09" },
+            { id: "chapter10", title: "المائدة وحنفية المال — حصاد الرحلة", path: "/book-03-living-farm/chapter10" },
+            { id: "chapter11", title: "الدليل المرجعي الشامل (النص الأصلي)", path: "/book-03-living-farm/chapter11" },
         ],
     },
 };
@@ -195,6 +217,15 @@ export const LIBRARY: LibraryEntry[] = [
         path: "/agri",
         icon: "Sprout",
         books: BOOKS,
+    },
+    {
+        id: "farm",
+        title: "المزرعة الحية - نظام بيئي لا ينام",
+        subtitle: "SmartFarm",
+        description: "مزرعة ذكية في قلب الصحراء — من حبة رمل إلى نظام بيئي يكتفي ذاتيًا: تربة حية، طاقة شمسية، ماء معاد تدويره، وعقل رقمي يدير كل شيء.",
+        path: "/farm",
+        icon: "Leaf",
+        books: FARM_BOOKS,
     },
     {
         id: "sea",

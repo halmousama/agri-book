@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Sprout, Ship, BookOpen, ArrowLeft, GraduationCap } from "lucide-react";
+import { Sprout, Ship, Leaf, BookOpen, ArrowLeft, GraduationCap } from "lucide-react";
 import { LIBRARY } from "./common/constants/books";
 
 const ENTRY_STYLES: Record<string, { gradient: string; border: string; glow: string; iconBg: string; iconColor: string; btn: string; dot: string; badge: string }> = {
@@ -24,10 +24,21 @@ const ENTRY_STYLES: Record<string, { gradient: string; border: string; glow: str
     dot: "bg-blue-400",
     badge: "border-blue-500/30 text-blue-300",
   },
+  farm: {
+    gradient: "from-amber-900/60 via-amber-800/30 to-transparent",
+    border: "border-amber-500/30 hover:border-amber-400/60",
+    glow: "shadow-amber-500/20 hover:shadow-amber-400/40",
+    iconBg: "bg-amber-500/20",
+    iconColor: "text-amber-300",
+    btn: "bg-amber-600 hover:bg-amber-500 shadow-amber-600/30 hover:shadow-amber-500/50",
+    dot: "bg-amber-400",
+    badge: "border-amber-500/30 text-amber-300",
+  },
 };
 
 const ENTRY_ICONS: Record<string, React.ReactNode> = {
   agri: <Sprout size={44} />,
+  farm: <Leaf size={44} />,
   sea: <Ship size={44} />,
 };
 

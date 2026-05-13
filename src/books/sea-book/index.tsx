@@ -14,7 +14,10 @@ export default function SeaBookIntro() {
       >
         <div className="inline-flex justify-center p-1 rounded-full bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 ring-1 ring-white/10 backdrop-blur-md shadow-2xl">
           <div className="flex items-center justify-center w-24 h-24 rounded-full bg-slate-800/80 border border-slate-700/50 shadow-inner">
-            <Ship size={48} className="text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+            <Ship
+              size={48}
+              className="text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+            />
           </div>
         </div>
 
@@ -23,7 +26,8 @@ export default function SeaBookIntro() {
         </h1>
 
         <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium">
-          دليلك المتكامل لفهم البحر وعلوم الصيد — من قراءة المد والجزر إلى ربط العقد البحرية.
+          دليلك المتكامل لفهم البحر وعلوم الصيد — من قراءة المد والجزر إلى ربط
+          العقد البحرية.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-12">
@@ -38,7 +42,8 @@ export default function SeaBookIntro() {
             <Compass size={32} className="text-cyan-400 mb-4" />
             <h3 className="text-lg font-bold text-white mb-2">علوم الصيد</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              محاكيات تفاعلية للتضاريس البحرية، الطقس، النظارات المستقطبة، والعقد البحرية.
+              محاكيات تفاعلية للتضاريس البحرية، الطقس، النظارات المستقطبة،
+              والعقد البحرية.
             </p>
           </div>
         </div>
@@ -52,21 +57,48 @@ export default function SeaBookIntro() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 mt-8">
-          <Link to="/sea/book-sea/chapter01" className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors">
+          <Link
+            to="/sea/book-sea/chapter01"
+            className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+          >
             🗺️ قراءة البحر والتضاريس
           </Link>
-          <Link to="/sea/book-sea/chapter02" className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors">
+          <Link
+            to="/sea/book-sea/chapter02"
+            className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+          >
             ⏰ علم التوقيت
           </Link>
-          <Link to="/sea/book-sea/chapter03" className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors">
+          <Link
+            to="/sea/book-sea/chapter03"
+            className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+          >
             🌤️ الطقس ومزاج السمكة
           </Link>
-          <Link to="/sea/book-sea/chapter04" className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors">
+          <Link
+            to="/sea/book-sea/chapter04"
+            className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+          >
             🎣 التجهيزات والتكتيك
           </Link>
-          <Link to="/sea/book-sea/chapter05" className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors">
+          <Link
+            to="/sea/book-sea/chapter05"
+            className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 hover:bg-white/10 transition-colors"
+          >
             📖 الملاحق
           </Link>
+          <Link
+            to="/sea/book-sea/chapter06"
+            className="px-4 py-2 bg-amber-500/10 backdrop-blur-sm rounded-full border border-amber-500/30 text-sm text-amber-300 hover:bg-amber-500/20 transition-colors font-semibold"
+          >
+            📜 الدليل المرجعي الشامل
+          </Link>
+        </div>
+
+        <div className="mt-8 p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/20 text-center max-w-lg mx-auto">
+          <p className="text-sm text-amber-300 leading-relaxed">
+            📜 <strong>الفصل السادس</strong> يحتوي على النسخة الكاملة للكتاب.
+          </p>
         </div>
       </motion.div>
     </div>

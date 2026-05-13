@@ -22,12 +22,12 @@ import { useProgress } from "../../contexts/ProgressContext";
 import { ThemeToggle } from "../ui/ThemeToggle";
 
 const PART_ICONS: Record<string, React.ReactNode> = {
-  "book-01-nature-logic": <Sprout size={20} className="text-emerald-600" />,
-  "book-02-science-toolbox": <Wrench size={20} className="text-blue-600" />,
-  "book-03-systems-engineering": <Tractor size={20} className="text-amber-600" />,
-  "book-04-hardware-ai": <Cpu size={20} className="text-purple-600" />,
-  "book-05-ecosystems-export": <Globe size={20} className="text-teal-600" />,
-  "book-sea": <Ship size={20} className="text-blue-600" />,
+  "book-01-nature-logic": <Sprout size={20} className="text-emerald-600 dark:text-emerald-400" />,
+  "book-02-science-toolbox": <Wrench size={20} className="text-blue-600 dark:text-blue-400" />,
+  "book-03-systems-engineering": <Tractor size={20} className="text-amber-600 dark:text-amber-400" />,
+  "book-04-hardware-ai": <Cpu size={20} className="text-purple-600 dark:text-purple-400" />,
+  "book-05-ecosystems-export": <Globe size={20} className="text-teal-600 dark:text-teal-400" />,
+  "book-sea": <Ship size={20} className="text-blue-600 dark:text-blue-400" />,
 };
 
 const PART_COLORS: Record<string, string> = {
@@ -48,8 +48,8 @@ const COLOR_CLASSES: Record<string, Record<string, string>> = {
 };
 
 const LIBRARY_COLORS: Record<string, { gradient: string; iconGrad: string; iconColor: string; logoText: string; homeHover: string }> = {
-  agri: { gradient: "from-emerald-100 to-amber-100", iconGrad: "from-emerald-100 to-amber-100", iconColor: "text-emerald-700", logoText: "hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 dark:hover:text-emerald-400", homeHover: "dark:bg-emerald-600" },
-  sea: { gradient: "from-blue-100 to-cyan-100", iconGrad: "from-blue-100 to-cyan-100", iconColor: "text-blue-700", logoText: "hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/30 dark:hover:text-blue-400", homeHover: "dark:bg-blue-600" },
+  agri: { gradient: "from-emerald-100 to-amber-100 dark:from-emerald-900/40 dark:to-amber-900/30", iconGrad: "from-emerald-100 to-amber-100 dark:from-emerald-800/60 dark:to-amber-800/50", iconColor: "text-emerald-700 dark:text-emerald-300", logoText: "hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 dark:hover:text-emerald-400", homeHover: "dark:bg-emerald-600" },
+  sea: { gradient: "from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/30", iconGrad: "from-blue-100 to-cyan-100 dark:from-blue-800/60 dark:to-cyan-800/50", iconColor: "text-blue-700 dark:text-blue-300", logoText: "hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/30 dark:hover:text-blue-400", homeHover: "dark:bg-blue-600" },
 };
 
 export const MasterLayout = () => {

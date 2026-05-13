@@ -10,7 +10,7 @@ export default function Chapter01() {
         <Link to="/sea/book-sea" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
           <ArrowRight size={16} /> مقدمة الكتاب
         </Link>
-        <span>الفصل 1 من 5</span>
+        <span>الفصل 1 من 6</span>
       </div>
 
       <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100 mb-6">

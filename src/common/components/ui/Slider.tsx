@@ -23,14 +23,14 @@ export const Slider = ({ label, value, min, max, unit, color = "emerald", classN
 
     return (
         <div dir="ltr" className={cn("flex flex-col gap-2 w-full", className)}>
-            <div className="flex justify-between items-center text-sm font-bold text-slate-700">
+            <div className="flex justify-between items-center text-sm font-bold text-slate-700 dark:text-slate-300">
                 <span>{label}</span>
                 <span className={cn("px-2 py-1 rounded-md text-white shadow-sm text-xs", bgMap[color])}>
                     {value} {unit}
                 </span>
             </div>
 
-            <div className="relative w-full h-2 rounded-full bg-slate-200">
+            <div className="relative w-full h-2 rounded-full bg-slate-200 dark:bg-slate-700">
                 <div
                     className={cn("absolute top-0 left-0 h-full rounded-full transition-all duration-300", bgMap[color])}
                     style={{ width: `${percentage}%` }}
@@ -52,7 +52,7 @@ export const Slider = ({ label, value, min, max, unit, color = "emerald", classN
                     style={{ left: `calc(${percentage}%)`, transform: "translate(-50%, 0)" }}
                 />
             </div>
-            <div className="flex justify-between text-[10px] text-slate-400 font-medium">
+            <div className="flex justify-between text-[10px] text-slate-400 dark:text-slate-500 font-medium">
                 <span>{min}</span>
                 <span>{max}</span>
             </div>

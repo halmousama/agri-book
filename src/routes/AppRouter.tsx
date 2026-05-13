@@ -4,12 +4,14 @@ import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from '../common/components/ScrollToTop';
 import App from '../App';
 import { MasterLayout } from '../common/components/layout/MasterLayout';
-import { BOOKS, SEA_BOOKS } from '../common/constants/books';
+import { BOOKS, SEA_BOOKS, FARM_BOOKS } from '../common/constants/books';
 
 const handbookIntros = import.meta.glob('../handbook/*/index.tsx');
 const handbookChapters = import.meta.glob('../handbook/*/chapters/*.tsx');
 const seaIntros = import.meta.glob('../books/sea-book/index.tsx');
 const seaChapters = import.meta.glob('../books/sea-book/chapters/*.tsx');
+const farmIntros = import.meta.glob('../books/book-03-living-farm/index.tsx');
+const farmChapters = import.meta.glob('../books/book-03-living-farm/chapters/*.tsx');
 
 const lazyComponents: Record<string, any> = {};
 
@@ -23,6 +25,12 @@ Object.entries(seaIntros).forEach(([path, loader]) => {
   lazyComponents[path] = lazy(loader as any);
 });
 Object.entries(seaChapters).forEach(([path, loader]) => {
+  lazyComponents[path] = lazy(loader as any);
+});
+Object.entries(farmIntros).forEach(([path, loader]) => {
+  lazyComponents[path] = lazy(loader as any);
+});
+Object.entries(farmChapters).forEach(([path, loader]) => {
   lazyComponents[path] = lazy(loader as any);
 });
 
@@ -49,6 +57,7 @@ export const AppRouter = () => {
           {/* Redirect bare library paths */}
           <Route path="/agri" element={<Navigate to="/agri/book-01-nature-logic" replace />} />
           <Route path="/sea" element={<Navigate to="/sea/book-sea" replace />} />
+          <Route path="/farm" element={<Navigate to="/farm/book-03-living-farm" replace />} />
 
           {/* Agri Books (5 books from handbook/) */}
           {Object.values(BOOKS).map((book) => (
@@ -88,6 +97,31 @@ export const AppRouter = () => {
               {book.chapters.map((chapter) => {
                 const fileId = chapter.id.charAt(0).toUpperCase() + chapter.id.slice(1);
                 const chapterPath = `../books/sea-book/chapters/${fileId}.tsx`;
+                const ChapterComp = lazyComponents[chapterPath];
+                return (
+                  <Route
+                    key={chapter.id}
+                    path={chapter.id}
+                    element={ChapterComp ? <ChapterComp /> : <div>فصل غير موجود</div>}
+                  />
+                );
+              })}
+            </Route>
+          ))}
+
+          {/* Farm Book (standalone SmartFarm book) */}
+          {Object.values(FARM_BOOKS).map((book) => (
+            <Route key={book.id} path={`/farm/${book.id}`} element={<MasterLayout />}>
+              <Route
+                index
+                element={(() => {
+                  const Intro = lazyComponents[`../books/book-03-living-farm/index.tsx`];
+                  return Intro ? <Intro /> : <div>مقدمة غير موجودة</div>;
+                })()}
+              />
+              {book.chapters.map((chapter) => {
+                const fileId = chapter.id.charAt(0).toUpperCase() + chapter.id.slice(1);
+                const chapterPath = `../books/book-03-living-farm/chapters/${fileId}.tsx`;
                 const ChapterComp = lazyComponents[chapterPath];
                 return (
                   <Route
